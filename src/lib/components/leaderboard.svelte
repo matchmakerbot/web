@@ -1,5 +1,5 @@
 <script>
-	export let users;
+	export let users = [];
 	const keys = ["#", "Username", "Wins", "Losses", "Winrate", "MMR"];
 </script>
 
@@ -22,12 +22,12 @@
 				<h1 class="">#{i + 1}</h1>
 				<div class="ml-5 flex flex-row flex-1">
 					<h1>| &nbsp</h1>
-					<h1>{user.name.length > 19 ? user.name.substr(0, 18) : user.name}</h1>
+					<h1>{user.username.length > 19 ? user.name.substr(0, 18) : user.username}</h1>
 				</div>
 				<h1 class="flex-1">| &nbsp {user.wins}</h1>
 				<h1 class="flex-1">| &nbsp {user.losses}</h1>
 				<h1 class="flex-1">
-					| &nbsp {Math.floor((user.wins / (user.wins + user.losses)) * 100)}%
+					| &nbsp {user.losses === 0 ? 100 : Math.floor((user.wins / (user.wins + user.losses)) * 100)}%
 				</h1>
 				<h1 class="flex-1">| &nbsp {user.mmr}</h1>
 			</div>

@@ -1,14 +1,41 @@
 <script>
+	import ChannelList from "./channelList.svelte";
+
 	export let servers = [];
+
+	let channels = [];
+
+	const changeServers = async (/** @type {string} */ id) => {
+		const channelsReq = await fetch(`https://localhost:8080/api/v1/channels/guild/${id}`, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+		channels = await channelsReq.json();
+	};
 </script>
 
-<div class="bg-deep-500 flex justify-between flex-col min-h-100vh">
-	{#each servers as server}
-		<img class="p-15px" src={server.img} alt="" />
-	{/each}
-	<div class="flex flex-col w-48px ml-4 mb-2 children:mt-2">
-		<div class="h-2px mt-7 bg-deep-50" />
+<div
+	class="bg-deep-500 flex justify-between items-center flex-col min-h-100vh children:m-3 children:w-50px"
+>
+	<div>
+		{#each servers as server}
+			<button on:click={() => changeServers(server.id)}>
+				<img
+					class="mt-1 rounded-3xl"
+					src={server.icon == null
+						? "../../../static/servers/defaultserverlogo.png"
+						: `https://cdn.discordapp.com/icons/${server.id}/${server.icon}.png`}
+					alt=""
+				/>
+			</button>
+		{/each}
+	</div>
+	<div class="flex flex-col mb-1 children:mt-3">
+		<div class="h-[2px] mt-7 bg-deep-50" />
 		<img class="p-1 bg-deep-800 rounded-3xl " src="../../../static/userData/lang.png" alt="" />
 		<img class="" src="../../../static/userData/me.png" alt="" />
 	</div>
 </div>
+<ChannelList guildName="Tweeno's server" {channels} />
