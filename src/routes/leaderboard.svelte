@@ -1,9 +1,8 @@
 <script>
 	import { onMount } from "svelte";
 	import ServerList from "$lib/components/serverList.svelte";
-	let serverList = [];
 
-	onMount(async () => {
+	let serverList = (async () => {
 		await fetch(`https://localhost:8080/api/v1/auth/validatecookie`, {
 			method: "GET",
 			headers: {
@@ -12,6 +11,7 @@
 			mode: "cors",
 			credentials: "include",
 		});
+
 		const serverListRequest = await fetch(
 			`https://localhost:8080/api/v1/guilds/getguildsuserandbotisin`,
 			{
@@ -23,12 +23,14 @@
 				credentials: "include",
 			}
 		);
-		serverList = await serverListRequest.json();
-	});
+		return await serverListRequest.json();
+	})();
 </script>
 
 <div class="flex">
-	<ServerList servers={serverList} />
+	{#await serverList then actualServerList}
+		<ServerList servers={actualServerList} />
+	{/await}
 </div>
 
 <style>

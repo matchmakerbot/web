@@ -13,9 +13,7 @@
 			let the fun begin!
 		</p>
 		<div class="flex mt-5">
-			<a href={process.env.DISCORD_OAUTH2_LINK}>
-				<DiscordButton />
-			</a>
+			<DiscordButton />
 			<button class="bg-deep-500 text-white text-xl rounded-lg flex items-center p-3 ml-5">
 				Invite bot to server <Icon
 					icon="akar-icons:arrow-up-right"

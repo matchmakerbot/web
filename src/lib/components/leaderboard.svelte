@@ -1,5 +1,6 @@
 <script>
 	export let users = [];
+
 	const keys = ["#", "Username", "Wins", "Losses", "Winrate", "MMR"];
 </script>
 
@@ -13,24 +14,32 @@
 		{/each}
 	</div>
 	<div class="flex flex-col justify-between">
-		{#each users as user, i}
-			<div
-				class="flex flex-row justify-between text-l text-white  bg-deep{i % 2 === 0
-					? ''
-					: '-700'} rounded-xl p-5 mt-2"
-			>
-				<h1 class="">#{i + 1}</h1>
-				<div class="ml-5 flex flex-row flex-1">
-					<h1>| &nbsp</h1>
-					<h1>{user.username.length > 19 ? user.name.substr(0, 18) : user.username}</h1>
+		{#if users.length !== 0}
+			{#each users as user, i}
+				<div
+					class="flex flex-row justify-between text-l text-white  bg-deep{i % 2 === 0
+						? ''
+						: '-700'} rounded-xl p-5 mt-2"
+				>
+					<h1 class="">#{i + 1}</h1>
+					<div class="ml-5 flex flex-row flex-1">
+						<h1>| &nbsp</h1>
+						<h1>{user.username.length > 19 ? user.name.substr(0, 18) : user.username}</h1>
+					</div>
+					<h1 class="flex-1">| &nbsp {user.wins}</h1>
+					<h1 class="flex-1">| &nbsp {user.losses}</h1>
+					<h1 class="flex-1">
+						| &nbsp {user.losses === 0
+							? 100
+							: Math.floor((user.wins / (user.wins + user.losses)) * 100)}%
+					</h1>
+					<h1 class="flex-1">| &nbsp {user.mmr}</h1>
 				</div>
-				<h1 class="flex-1">| &nbsp {user.wins}</h1>
-				<h1 class="flex-1">| &nbsp {user.losses}</h1>
-				<h1 class="flex-1">
-					| &nbsp {user.losses === 0 ? 100 : Math.floor((user.wins / (user.wins + user.losses)) * 100)}%
-				</h1>
-				<h1 class="flex-1">| &nbsp {user.mmr}</h1>
+			{/each}
+		{:else}
+			<div class="flex flex-col justify-center items-center">
+				<h1 class="text-white font-sans-bold text-4xl">No users found</h1>
 			</div>
-		{/each}
+		{/if}
 	</div>
 </div>

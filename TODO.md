@@ -1,3 +1,4 @@
 main page mask and work on those fkn phone effects
 add tooltips servers
-make api requests
+add error handling for fetching 400's
+make 400 page
