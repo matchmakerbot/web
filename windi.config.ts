@@ -6,6 +6,7 @@ export default defineConfig({
 			colors: {
 				deep: {
 					DEFAULT: "#273461",
+					400: "#394B8D",
 					50: "#B9C2E3",
 					500: "#273461",
 					700: "#1E284B",

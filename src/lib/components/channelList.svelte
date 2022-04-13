@@ -2,11 +2,9 @@
 	import Leaderboard from "./leaderboard.svelte";
 
 	export let guildName;
-
 	export let channels = [];
-
+	let choosenChannel;
 	let leaderboardObj = {};
-
 	let choosenLeaderboard = [];
 
 	const fetchLeaderboard = async (channel) => {
@@ -27,17 +25,20 @@
 	$: channels,
 		(async () => {
 			if (channels.length !== 0) {
-				if (!Object.keys(leaderboardObj).includes(channels[0].channelId)) {
-					const firstLeaderboard = channels[0];
-
+				const firstLeaderboard = channels[0];
+				if (!Object.keys(leaderboardObj).includes(firstLeaderboard.channelId)) {
 					const response = await fetchLeaderboard(firstLeaderboard);
 
 					leaderboardObj = { ...leaderboardObj, [firstLeaderboard.channelId]: response };
 
+					choosenChannel = firstLeaderboard.channelId;
+
 					choosenLeaderboard = response;
 					return;
 				}
-				choosenLeaderboard = leaderboardObj[channels[0].channelId];
+				choosenLeaderboard = leaderboardObj[firstLeaderboard.channelId];
+
+				choosenChannel = firstLeaderboard.channelId;
 			}
 		})();
 
@@ -49,6 +50,7 @@
 
 			leaderboardObj = { ...leaderboardObj, [channel.channelId]: response };
 		}
+		choosenChannel = channel.channelId;
 		choosenLeaderboard = leaderboardObj[channel.channelId];
 	};
 </script>
@@ -60,7 +62,10 @@
 		<h1 class="font-sans-bold text-l ml-3 text-white pb-3">Channels</h1>
 		{#each channels as channel}
 			<button
-				class="text-deep-50 font-sans-bold text-left rounded-xl leading-10 pl-3 mr-5 hover:bg-deep hover:text-white"
+				class="font-sans-bold text-left rounded-xl leading-10 pl-3 mr-5 {choosenChannel ===
+				channel.channelId
+					? 'bg-deep-400 text-white'
+					: ' text-deep-50 hover:bg-deep hover:text-white'}"
 				on:click={() => getNewLeaderboard(channel)}># {channel.name}</button
 			>
 		{/each}

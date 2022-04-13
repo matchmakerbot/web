@@ -1,4 +1,6 @@
 main page mask and work on those fkn phone effects
-add tooltips servers
 add error handling for fetching 400's
-make 400 page
+add more stuff to main page
+add commands page, cud be normal discord with text
+allow admins to change settings
+add pagination, and fix 10th leaderboard

@@ -1,10 +1,11 @@
 <script>
 	import ChannelList from "./channelList.svelte";
+	import { tooltip } from "../tooltip/tooltip.js";
 
 	export let servers = [];
-
+	export let userData;
+	let selectedServer;
 	let channelsObj = {};
-
 	let choosenChannels = [];
 
 	const fetchChannels = async (id) => {
@@ -22,6 +23,8 @@
 		(async () => {
 			const channelsReq = await fetchChannels(servers[0].id);
 
+			selectedServer = servers[0].name;
+
 			channelsObj = { [servers[0].id]: channelsReq };
 
 			choosenChannels = channelsReq;
@@ -33,6 +36,7 @@
 
 			channelsObj = { ...channelsObj, [id]: channelsReq };
 		}
+		selectedServer = servers.find((e) => e.id === id).name;
 
 		choosenChannels = channelsObj[id];
 	};
@@ -43,9 +47,9 @@
 >
 	<div>
 		{#each servers as server}
-			<button on:click={() => getNewChannels(server.id)}>
+			<button title={server.name} on:click={() => getNewChannels(server.id)} use:tooltip>
 				<img
-					class="mt-1 rounded-3xl"
+					class="rounded-3xl"
 					src={server.icon == null
 						? "../../../static/servers/defaultserverlogo.png"
 						: `https://cdn.discordapp.com/icons/${server.id}/${server.icon}.png`}
@@ -54,10 +58,17 @@
 			</button>
 		{/each}
 	</div>
-	<div class="flex flex-col mb-1 children:mt-3">
-		<div class="h-[2px] mt-7 bg-deep-50" />
-		<img class="p-1 bg-deep-800 rounded-3xl " src="../../../static/userData/lang.png" alt="" />
-		<img class="" src="../../../static/userData/me.png" alt="" />
+	<div class="flex flex-col">
+		<div class="h-[2px] bg-deep-50 mb-2" />
+		<img class="p-1 bg-deep-800 rounded-3xl mb-2" src="../../../static/userData/lang.png" alt="" />
+		<img
+			class="rounded-full"
+			src={`https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png`}
+			alt=""
+			title={userData.username}
+			use:tooltip
+		/>
 	</div>
 </div>
-<ChannelList guildName="Tweeno's server" channels={choosenChannels} />
+
+<ChannelList channels={choosenChannels} guildName={selectedServer} />
