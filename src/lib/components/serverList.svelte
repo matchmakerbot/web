@@ -43,7 +43,7 @@
 </script>
 
 <div
-	class="bg-deep-500 flex justify-between items-center flex-col min-h-100vh children:m-3 children:w-50px"
+	class="bg-deep-500 flex justify-between items-center flex-col min-h-100vh children:m-3 children:w-50px <lg:hidden"
 >
 	<div>
 		{#each servers as server}

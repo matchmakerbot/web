@@ -1,9 +1,13 @@
 <script>
-	import ServerList from "$lib/components/serverList.svelte";
+	import { goto } from "$app/navigation";
 	import { Stretch } from "svelte-loading-spinners";
+	import ServerList from "$lib/components/serverList.svelte";
 
+	// @ts-ignore
+	const discordOauth2Link = DISCORD_OAUTH2_LINK;
+	
 	const userDataAndServerList = (async () => {
-		await fetch(`https://localhost:8080/api/v1/auth/validatecookie`, {
+		const cookieValidation = await fetch(`https://localhost:8080/api/v1/auth/validatecookie`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
@@ -11,6 +15,9 @@
 			mode: "cors",
 			credentials: "include",
 		});
+		if (cookieValidation.status === 400) {
+			goto(discordOauth2Link);
+		}
 
 		const serverListRequest = await fetch(
 			`https://localhost:8080/api/v1/guilds/getguildsuserandbotisin`,
@@ -49,6 +56,3 @@
 		/>
 	{/await}
 </div>
-
-<style>
-</style>

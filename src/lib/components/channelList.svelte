@@ -58,7 +58,7 @@
 	};
 </script>
 
-<div class="bg-deep-700 min-w-250px">
+<div class="bg-deep-700 min-w-250px <lg:hidden">
 	<h1 class="text-white mt-7 ml-5 font-sans-bold text-l">{guildName}</h1>
 	<div class="h-3px mt-7 bg-deep-500" />
 	<div class="flex flex-col mt-7 ml-5 text-left">
