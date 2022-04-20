@@ -44,7 +44,7 @@
 			}
 		})();
 
-	export const getNewLeaderboard = async (
+	export const onChannelClick = async (
 		/** @type {{ queueMode: string; channelId: string; }} */ channel,
 		/** @type {number} */ skip
 	) => {
@@ -69,7 +69,7 @@
 				channel.channelId
 					? 'bg-deep-400 text-white'
 					: ' text-deep-50 hover:bg-deep hover:text-white'}"
-				on:click={() => getNewLeaderboard(channel, 0)}># {channel.name}</button
+				on:click={() => onChannelClick(channel, 0)}># {channel.name}</button
 			>
 		{/each}
 	</div>

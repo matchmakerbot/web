@@ -1,6 +1,6 @@
 <script>
 	import { Router, Route, Link } from "svelte-navigator";
-	import AAA from "./routes/index.svelte";
+	import Index from "./routes/index.svelte";
 </script>
 
 <Router>
@@ -14,7 +14,7 @@
 
 	<main>
 		<Route path="/">
-			<AAA/>
+			<Index />
 		</Route>
 	</main>
 </Router>

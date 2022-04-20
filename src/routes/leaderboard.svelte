@@ -5,7 +5,7 @@
 
 	// @ts-ignore
 	const discordOauth2Link = DISCORD_OAUTH2_LINK;
-	
+
 	const userDataAndServerList = (async () => {
 		const cookieValidation = await fetch(`https://localhost:8080/api/v1/auth/validatecookie`, {
 			method: "GET",

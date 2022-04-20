@@ -1,11 +1,11 @@
 <script>
 	const links = {
 		GitHub: "https://github.com/matchmakerbot",
-		Discord: "https://discord.com/invite/VYDTVR9HKC"
+		Discord: "https://discord.com/invite/VYDTVR9HKC",
 	};
 </script>
 
-<footer class="bg-deep-900 py-8 flex flex-col items-center mt-10 text-white">
+<footer class="bg-deep-900 py-8 flex flex-col items-center mt-10 text-white z-10 relative">
 	<div class="flex mb-8">
 		{#each Object.entries(links) as [text, href]}
 			<a class="mx-2 hover:underline" {href}>{text}</a>

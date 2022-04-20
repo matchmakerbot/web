@@ -10,5 +10,6 @@
 		@apply bg-deep-800;
 		scrollbar-width: 0;
 		overflow-x: hidden;
+		touch-action: pan-y;
 	}
 </style>

@@ -19,11 +19,10 @@
 	})();
 </script>
 
-<div class="p-4 flex justify-between items-center">
+<div class="p-4 flex justify-between items-center relative z-10">
 	<h1 class="lg:text-2xl text-white heading">Matchmaker Bot™</h1>
 	<div class="flex items-center">
 		<h1 class="text-gray-300 mr-5">English</h1>
-
 		{#await userData then fetchedUserData}
 			<button on:click={() => goto("/leaderboard")}>
 				<img

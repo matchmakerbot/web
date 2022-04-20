@@ -30,7 +30,7 @@
 			choosenChannels = channelsReq;
 		})();
 
-	const getNewChannels = async (/** @type {string} */ id) => {
+	const onServerClick = async (/** @type {string} */ id) => {
 		if (!Object.keys(channelsObj).includes(id)) {
 			const channelsReq = await fetchChannels(id);
 
@@ -47,7 +47,7 @@
 >
 	<div>
 		{#each servers as server}
-			<button title={server.name} on:click={() => getNewChannels(server.id)} use:tooltip>
+			<button title={server.name} on:click={() => onServerClick(server.id)} use:tooltip>
 				<img
 					class="rounded-3xl"
 					src={server.icon == null
