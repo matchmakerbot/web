@@ -4,42 +4,7 @@
 
 	export let servers = [];
 	export let userData;
-	let selectedServer;
-	let channelsObj = {};
-	let choosenChannels = [];
-
-	const fetchChannels = async (id) => {
-		const channelsReq = await fetch(`https://localhost:8080/api/v1/channels/guild/${id}`, {
-			method: "GET",
-			headers: {
-				"Content-Type": "application/json",
-			},
-		});
-
-		return await channelsReq.json();
-	};
-
-	$: servers,
-		(async () => {
-			const channelsReq = await fetchChannels(servers[0].id);
-
-			selectedServer = servers[0].name;
-
-			channelsObj = { [servers[0].id]: channelsReq };
-
-			choosenChannels = channelsReq;
-		})();
-
-	const onServerClick = async (/** @type {string} */ id) => {
-		if (!Object.keys(channelsObj).includes(id)) {
-			const channelsReq = await fetchChannels(id);
-
-			channelsObj = { ...channelsObj, [id]: channelsReq };
-		}
-		selectedServer = servers.find((e) => e.id === id).name;
-
-		choosenChannels = channelsObj[id];
-	};
+	export let onServerClickCallback;
 </script>
 
 <div
@@ -47,7 +12,7 @@
 >
 	<div>
 		{#each servers as server}
-			<button title={server.name} on:click={() => onServerClick(server.id)} use:tooltip>
+			<button title={server.name} on:click={() => onServerClickCallback(server.id)} use:tooltip>
 				<img
 					class="rounded-3xl"
 					src={server.icon == null
@@ -70,5 +35,3 @@
 		/>
 	</div>
 </div>
-
-<ChannelList channels={choosenChannels} guildName={selectedServer} />

@@ -53,6 +53,7 @@
 		<ServerList
 			servers={actualUserDataAndServerList.serverList}
 			userData={actualUserDataAndServerList.userData}
+			onServerClickCallback={() => {}}
 		/>
 	{/await}
 </div>
