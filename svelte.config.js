@@ -1,4 +1,4 @@
-import adapter from "@sveltejs/adapter-auto";
+import adapter from "@sveltejs/adapter-node";
 import preprocess from "svelte-preprocess";
 import WindiCSS from "vite-plugin-windicss";
 import replace from "@rollup/plugin-replace";
@@ -11,7 +11,7 @@ const config = {
 	preprocess: [preprocess()],
 
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({ out: "./dist" }),
 		vite: {
 			plugins: [
 				WindiCSS(),

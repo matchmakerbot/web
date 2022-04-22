@@ -15,7 +15,8 @@
 			mode: "cors",
 			credentials: "include",
 		});
-		if (cookieValidation.status === 400) {
+
+		if (cookieValidation.status === 401) {
 			goto(discordOauth2Link);
 		}
 

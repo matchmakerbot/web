@@ -1,7 +1,9 @@
 <script>
+	import { goto } from "$app/navigation";
 	import Icon from "@iconify/svelte";
 	export let title = "";
 	export let description = "";
+	export let redirectingLink = "";
 </script>
 
 <div
@@ -14,7 +16,10 @@
 		<p class="lg:text-xl text-gray-300 w-[40ch] lg:w-[50ch] mt-5">
 			{description}
 		</p>
-		<button class="bg-deep-500 text-white text-xl rounded-lg items-center p-3 mt-5">
+		<button
+			on:click={() => goto(redirectingLink)}
+			class="bg-deep-500 text-white text-xl rounded-lg items-center p-3 mt-5"
+		>
 			Check The Commands <Icon icon="akar-icons:arrow-up-right" color="white" /></button
 		>
 	</div>

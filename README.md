@@ -15,7 +15,7 @@ Local development requires the following software:
 - NodeJS
 - PNPM
 
-If everything is set up correctly, run the following command for an optimal development environment, which will watch for changes in the typescript files and auto-restart the server if necessary.
+If everything is set up correctly, run the following command for an optimal development environment, which will watch for changes in all the necessary files and auto-restart the server if necessary.
 
 - `yarn dev`
 

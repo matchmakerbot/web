@@ -1,5 +1,3 @@
-main page mask and work on those fkn phone effects
 add error handling for fetching 400's
-add commands page, cud be normal discord with text
-allow admins to change settings
+make leaderboard and commands responsive
 add languages

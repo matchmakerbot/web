@@ -5,11 +5,7 @@
 	import MainPageInfo from "$lib/components/mainPageInfo.svelte";
 </script>
 
-<img
-	src="../../../static/mainPageIcons/topGreenEllipse.png"
-	class="absolute left-[-200px]"
-	alt=""
-/>
+<img src="/mainPageIcons/topGreenEllipse.png" class="absolute left-[-200px]" alt="" />
 <Navbar />
 <div>
 	<div
@@ -67,16 +63,16 @@
 			/>
 		</div>
 		<img
-			src="../../../static/mainPageIcons/rightOrangeEllipse.png"
+			src="/mainPageIcons/rightOrangeEllipse.png"
 			class="absolute right-[-200px] mt-50 z-0 object-pos <lg:hidden"
 			alt=""
 		/>
-		<!--increase margin top and try to not make it increase page size-->
 	</div>
 </div>
 <MainPageInfo
 	title="Commands at the palm of your hand"
 	description=" The bot features multiple commands with the ability to play games with random teams or captains, check the channel's leaderboards and reset said leaderboards, the list just keeps getting bigger and bigger!"
+	redirectingLink="/commands"
 />
 <Footer />
 

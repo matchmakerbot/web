@@ -1,0 +1,9 @@
+**
+!/src/**
+!/static/**
+!/locales/**
+!package.json
+!pnpm-lock.yaml
+!svelte.config.js
+!tsconfig.json
+!windi.config.ts
