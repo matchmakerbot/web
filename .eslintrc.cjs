@@ -17,4 +17,10 @@ module.exports = {
 		es2017: true,
 		node: true,
 	},
+	rules: {
+		"css-unused-selector": "off", // complains that body isnt being used in layout, but it is.
+		"@typescript-eslint/ban-ts-comment": "off", // Svelte has a weird way of using enviroment variables, so this is disabled.
+		"no-undef": "off", // Svelte has a weird way of using enviroment variables, so this is disabled.
+		"@typescript-eslint/no-empty-function": "off", // I fully blame this on myself, as i'm doing an extremely weird thing, because i can't figure out how to have a reactive component that depends on document
+	},
 };

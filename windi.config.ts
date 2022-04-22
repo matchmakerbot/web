@@ -18,6 +18,7 @@ export default defineConfig({
 		fontFamily: {
 			heading: "Carter One, sans-serif",
 			sans: "Lato, sans-serif",
+			ptsans: "PT Sans, sans-serif",
 		},
 	},
 	shortcuts: {

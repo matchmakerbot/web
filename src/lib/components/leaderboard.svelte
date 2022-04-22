@@ -20,7 +20,7 @@
 	const keys = ["#", "Username", "Wins", "Losses", "Winrate", "MMR"];
 </script>
 
-<div class="mb-5">
+<div class="mb-5 ml-auto mr-auto mt-10">
 	<h1 class="text-5xl mb-3 text-white font-bold italic">Leaderboard</h1>
 	<div class="flex flex-col w-60vh lg:w-100vh">
 		<div class=" bg-deep-500" />

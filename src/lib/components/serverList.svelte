@@ -21,13 +21,15 @@
 
 	$: servers,
 		(async () => {
-			const channelsReq = await fetchChannels(servers[0].id);
+			if (servers.length !== 0) {
+				const channelsReq = await fetchChannels(servers[0].id);
 
-			selectedServer = servers[0].name;
+				selectedServer = servers[0].name;
 
-			channelsObj = { [servers[0].id]: channelsReq };
+				channelsObj = { [servers[0].id]: channelsReq };
 
-			choosenChannels = channelsReq;
+				choosenChannels = channelsReq;
+			}
 		})();
 
 	const onServerClick = async (/** @type {string} */ id) => {
@@ -51,7 +53,7 @@
 				<img
 					class="rounded-3xl"
 					src={server.icon == null
-						? "../../../static/servers/defaultserverlogo.png"
+						? "/servers/defaultserverlogo.png"
 						: `https://cdn.discordapp.com/icons/${server.id}/${server.icon}.png`}
 					alt=""
 				/>
@@ -60,7 +62,7 @@
 	</div>
 	<div class="flex flex-col">
 		<div class="h-[2px] bg-deep-50 mb-2" />
-		<img class="p-1 bg-deep-800 rounded-3xl mb-2" src="../../../static/userData/lang.png" alt="" />
+		<img class="p-1 bg-deep-800 rounded-3xl mb-2" src="/userData/lang.png" alt="" />
 		<img
 			class="rounded-full"
 			src={`https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png`}
