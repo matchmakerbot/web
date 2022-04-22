@@ -21,11 +21,11 @@ jobs:
       - name: Lint
         uses: borales/actions-yarn@v2.1.0
         with:
-          run_install: lint
+          cmd: lint
       - name: Build
         uses: borales/actions-yarn@v2.1.0
         with:
-          run_install: build
+          cmd: build
   build:
     name: Build docker container
     runs-on: ubuntu-latest
