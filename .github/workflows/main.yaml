@@ -21,6 +21,7 @@ jobs:
       - name: Lint
         uses: pnpm/action-setup@v2.0.1
         with:
+          version: 7.0.0-rc.7
           cmd: lint
       - name: Build
         uses: pnpm/action-setup@v2.0.1
