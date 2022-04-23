@@ -25,7 +25,6 @@
 	<div class="flex items-center">
 		<div class="language mr-5 w-25">
 			<Select
-				inputStyles="box-sizing: border-box;"
 				on:select={(event) => ($locale = event.detail.value)}
 				placeholder={$locale === "en-US" ? "en" : $locale}
 				items={$locales}
@@ -52,8 +51,16 @@
 		background-color: transparent;
 		--border: 2px solid #394b8d;
 		--borderRadius: 10px;
-		color: #394b8d;
+		color: white;
 		--background: rgba(255, 255, 255, 0);
-		box-sizing: border-box;
+		--listBackground: #394b8d;
+		--listMaxHeight: 100vh;
+		--listBorder: 2px solid #394b8d;
+		--itemIsActiveBG: #394b8d;
+		--itemHoverBG: #b9c2e3;
+		--itemColor: white;
+		--clearSelectColor: rgba(255, 255, 255, 0);
+		--clearSelectFocusColor: rgba(255, 255, 255, 0);
+		--borderFocusColor: #151d35;
 	}
 </style>

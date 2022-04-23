@@ -1,7 +1,10 @@
 <script>
+	import { locale, locales } from "svelte-i18n";
+	import { goto } from "$app/navigation";
+	import Select from "svelte-select";
+
 	import ChannelList from "./channelList.svelte";
 	import { tooltip } from "../tooltip/tooltip.js";
-	import { goto } from "$app/navigation";
 
 	export let servers = [];
 	export let userData;
@@ -65,9 +68,16 @@
 			</button>
 		{/each}
 	</div>
-	<div class="flex flex-col">
-		<div class="h-[2px] bg-deep-50 mb-2" />
-		<img class="p-1 bg-deep-800 rounded-3xl mb-2" src="/userData/lang.png" alt="" />
+	<div class="flex flex-col children:mb-2">
+		<div class="h-[2px] bg-deep-50" />
+		<div class="language">
+			<Select
+				on:select={(event) => ($locale = event.detail.value)}
+				placeholder={$locale === "en-US" ? "en" : $locale}
+				items={$locales}
+				isSearchable={false}
+			/>
+		</div>
 		<img
 			class="rounded-full"
 			src={`https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png`}
@@ -77,5 +87,31 @@
 		/>
 	</div>
 </div>
-
 <ChannelList channels={choosenChannels} guildName={selectedServer} />
+
+<style>
+	.language {
+		--background-color: black;
+		--border: 2px solid #394b8d;
+		--borderRadius: 100%;
+		--height: 50px;
+		color: white;
+		--background: rgba(255, 255, 255, 0);
+		--listBackground: #394b8d;
+		--listMaxHeight: 100vh;
+		--listBorder: 2px solid #394b8d;
+		--itemIsActiveBG: #394b8d;
+		--itemHoverBG: #b9c2e3;
+		--itemColor: white;
+		--clearSelectColor: rgba(255, 255, 255, 0);
+		--borderFocusColor: #151d35;
+		--indicatorColor: rgba(255, 255, 255, 0);
+		--clearSelectFocusColor: rgba(255, 255, 255, 0);
+		--listRight: auto;
+		--inputFontSize: 10px;
+		--listRight: auto;
+		--selectedItemPadding: 0px;
+		--internalPadding: 0px;
+		--margin: 0px -2px;
+	}
+</style>

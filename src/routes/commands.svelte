@@ -1,14 +1,17 @@
 <script>
 	import { tooltip } from "$lib/tooltip/tooltip.js";
 	import { dictionary } from "svelte-i18n";
-	import { locale } from "svelte-i18n";
+	import { locale, locales } from "svelte-i18n";
 	import { _ } from "svelte-i18n";
+	import Select from "svelte-select";
+
 	import DiscordMessage from "$lib/components/discordMessage.svelte";
 	let channels = ["general help", "solos", "teams"];
 	let choosenChannel = "general help";
 	let currentText = "";
 	let i = 0;
 	let helpPages = $dictionary[$locale === "en-US" ? "en" : $locale].commands.commands_info;
+	$: locale, helpPages = $dictionary[$locale === "en-US" ? "en" : $locale].commands.commands_info;
 
 	const addText = (keyEvent) => {
 		if (keyEvent.key === "Enter" && keyEvent.target.value.length > 0) {
@@ -36,9 +39,16 @@
 				/>
 			</button>
 		</div>
-		<div class="flex flex-col">
-			<div class="h-[2px] bg-deep-50 mb-2" />
-			<img class="p-1 bg-deep-800 rounded-3xl mb-2" src="/userData/lang.png" alt="" />
+		<div class="flex flex-col children:mb-2">
+			<div class="h-[2px] bg-deep-50" />
+			<div class="language">
+				<Select
+					on:select={(event) => ($locale = event.detail.value)}
+					placeholder={$locale === "en-US" ? "en" : $locale}
+					items={$locales}
+					isSearchable={false}
+				/>
+			</div>
 			<img
 				class="rounded-full"
 				src={`https://cdn.discordapp.com/avatars/215982178046181376/7207696baf6774c970bcd37c6a12c5fd.png`}
@@ -79,3 +89,30 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.language {
+		text-align: center;
+		--background-color: black;
+		--border: 2px solid #394b8d;
+		--borderRadius: 100%;
+		--height: 50px;
+		color: white;
+		--background: rgba(255, 255, 255, 0);
+		--listBackground: #394b8d;
+		--listMaxHeight: 100vh;
+		--listBorder: 2px solid #394b8d;
+		--itemIsActiveBG: #394b8d;
+		--itemHoverBG: #b9c2e3;
+		--itemColor: white;
+		--clearSelectColor: rgba(255, 255, 255, 0);
+		--borderFocusColor: #151d35;
+		--indicatorColor: rgba(255, 255, 255, 0);
+		--clearSelectFocusColor: rgba(255, 255, 255, 0);
+		--inputFontSize: 10px;
+		--listRight: auto;
+		--selectedItemPadding: 0px;
+		--internalPadding: 0px;
+		--margin: 0px -2px;
+	}
+</style>
