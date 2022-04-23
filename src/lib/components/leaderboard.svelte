@@ -1,4 +1,6 @@
 <script>
+	import { _ } from "svelte-i18n";
+
 	import { paginate, DarkPaginationNav } from "svelte-paginate";
 	import { fetchLeaderboard } from "./channelList.svelte";
 	export let users = { data: [], total: 0 };
@@ -17,11 +19,18 @@
 
 	$: paginate({ items: users.data, pageSize, currentPage });
 
-	const keys = ["#", "Username", "Wins", "Losses", "Winrate", "MMR"];
+	const keys = [
+		"#",
+		$_("leaderboard.username"),
+		$_("leaderboard.wins"),
+		$_("leaderboard.losses"),
+		$_("leaderboard.winrate"),
+		$_("leaderboard.mmr"),
+	];
 </script>
 
-<div class="mb-5 ml-auto mr-auto mt-10">
-	<h1 class="text-5xl mb-3 text-white font-bold italic">Leaderboard</h1>
+<div class="mb-5 ml-auto mr-auto mt-6">
+	<h1 class="text-5xl mb-3 text-white font-bold italic">{$_("leaderboard.leaderboard")}</h1>
 	<div class="flex flex-col w-60vh lg:w-100vh">
 		<div class=" bg-deep-500" />
 		<div class="flex justify-between text-sm lg:text-xl bg-orange-500 rounded-xl p-5 mb-3">
@@ -66,7 +75,7 @@
 				</div>
 			{:else}
 				<div class="flex flex-col justify-center items-center">
-					<h1 class="text-white font-sans-bold lg:text-4xl">No users found</h1>
+					<h1 class="text-white font-sans-bold lg:text-4xl">{$_("leaderboard.no_users_found")}</h1>
 				</div>
 			{/if}
 		</div>

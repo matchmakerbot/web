@@ -1,7 +1,8 @@
 <script>
+	import { locale, locales } from "svelte-i18n";
+	import Select from "svelte-select";
 	import DiscordButton from "./discordButton.svelte";
 	import { goto } from "$app/navigation";
-
 	const userData = (async () => {
 		const request = await fetch(`https://localhost:8080/api/v1/users/getuserdata`, {
 			method: "GET",
@@ -22,7 +23,15 @@
 <div class="p-4 flex justify-between items-center relative z-10">
 	<h1 class="lg:text-2xl text-white heading">Matchmaker Bot™</h1>
 	<div class="flex items-center">
-		<h1 class="text-gray-300 mr-5">English</h1>
+		<div class="language mr-5 w-25">
+			<Select
+				inputStyles="box-sizing: border-box;"
+				on:select={(event) => ($locale = event.detail.value)}
+				placeholder={$locale === "en-US" ? "en" : $locale}
+				items={$locales}
+				isSearchable={false}
+			/>
+		</div>
 		{#await userData then fetchedUserData}
 			<button on:click={() => goto("/leaderboard")}>
 				<img
@@ -37,3 +46,14 @@
 		{/await}
 	</div>
 </div>
+
+<style>
+	.language {
+		background-color: transparent;
+		--border: 2px solid #394b8d;
+		--borderRadius: 10px;
+		color: #394b8d;
+		--background: rgba(255, 255, 255, 0);
+		box-sizing: border-box;
+	}
+</style>

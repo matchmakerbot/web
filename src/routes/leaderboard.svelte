@@ -16,8 +16,8 @@
 			credentials: "include",
 		});
 
-		if (cookieValidation.status === 401) {
-			goto(discordOauth2Link);
+		if (cookieValidation.status == 401) {
+			return goto(discordOauth2Link);
 		}
 
 		const serverListRequest = await fetch(
@@ -32,7 +32,11 @@
 			}
 		);
 
-		const userData = await fetch(`https://localhost:8080/api/v1/users/getuserdata`, {
+		if (/^(4|5)/.test(serverListRequest.status)) {
+			return goto(`/error?code=${serverListRequest.status}&data=${serverListRequest.statusText}`);
+		}
+
+		const userDataRequest = await fetch(`https://localhost:8080/api/v1/users/getuserdata`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
@@ -41,7 +45,11 @@
 			credentials: "include",
 		});
 
-		return { serverList: await serverListRequest.json(), userData: await userData.json() };
+		if (/^(4|5)/.test(userDataRequest.status)) {
+			return goto(`/error?code=${userDataRequest.status}&data=${userDataRequest.statusText}`);
+		}
+
+		return { serverList: await serverListRequest.json(), userData: await userDataRequest.json() };
 	})();
 </script>
 

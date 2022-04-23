@@ -1,0 +1,86 @@
+{
+	"404": "Strona nie znaleziona",
+	"commands": {
+		"commands_info": {
+			"general help": {
+				"config": "Skonfiguruj kanał matchmakera, użycie: /config createVoiceChannels on",
+				"credits": "Pokazuje, kto stworzył bota (jest gorący) i kilka przydatnych danych",
+				"examplesolos": "Podaje przykład, jak używać wersji solo dla bota.",
+				"helpsolosmatchmaking": "Komendy do dobierania solówek",
+				"helpteamsmatchmaking": "Komendy dla dobierania drużyn",
+				"queuetype": "Ustaw typ kolejki dla kanału, użycie: /queuetype <queueSize> <queueMode>"
+			},
+			"solos": {
+				"cancel": "Anuluj grę. \nAdministratorzy mogą również wykonać /cancel force gameId, aby wymusić anulowanie gry",
+				"changegame": "Anuluje/cofa wynik ukończonej gry. \nSposób użycia: /changegame (gameid) cancel, ten przykład anuluje grę, ponieważ nigdy się to nie wydarzyło. \n/changegame (gameid) cofnij, ten przykład przywróci wyniki",
+				"leaderboard": "Sprawdza Twój aktualny wynik. \nSposób użycia: /leaderboard channel <strona> (domyślnie 1), aby sprawdzić wynik w kanale, na którym się znajdujesz, /leaderboard channel <strona> <id kanału>, aby sprawdzić wynik innego kanału, lub /leaderboard me, aby sprawdzić swój obecny wynik",
+				"leave": "Opuść kolejkę",
+				"ongoinggames": "Sprawdź aktualne gry! \nSposób użycia: /ongoinggames <strona> (domyślnie 1)",
+				"q": "Wejdź do kolejki (usuwa gracza po 45 minutach, jeśli nie wykonano żadnej gry) (nie ma potrzeby ustawiania użytkownika, jeśli tryb to solo) (Kapitanowie są wyłączeni w kolejkach z mniej niż 6 graczami)",
+				"report": "Kończy grę, dając zwycięskiej drużynie jedno zwycięstwo i odwrotnie, drużynie przegrywającej. \nSposób użycia: /zgłoś wygraną LUB /zgłoś utratę",
+				"reset": "Resetuje wynik pojedynczego gracza (/reset player <discordid>) lub całego kanału, w którym to polecenie jest wstawione (/reset channel)",
+				"status": "Sprawdź stan kolejki"
+			},
+			"teams": {
+				"cancel": "Anuluj grę. \nAdministratorzy mogą również wykonać /cancel force gameId, aby wymusić anulowanie gry",
+				"changegame": "Anuluje/cofa wynik ukończonej gry. \nSposób użycia: /changegame (gameid) cancel, ten przykład anuluje grę, ponieważ nigdy się to nie wydarzyło. \n/changegame (gameid) cofnij, ten przykład przywróci wyniki",
+				"createteam": "Tworzy zespół, użycie: /createteam Maniacs",
+				"disband": "Usuwa twój zespół, administratorzy mogą również usunąć zespół, wpisując /rozwiąż nazwę zespołu",
+				"giveownership": "Przyznaje własność zespołu określonemu użytkownikowi. \nUżycie: /giveownership @dany",
+				"invite": "Zaprasza użytkownika, użyj: /invite @dany",
+				"jointeam": "Dołącz do zespołu, który Cię zaprosił, użyj: /jointeam Maniacs",
+				"kickplayer": "Wykopuje gracza z twojej drużyny, użyj: /kickplayer @dany lub /kickplayer niezgodny",
+				"leaderboard": "Sprawdza Twój aktualny wynik. \nSposób użycia: /leaderboard channel <strona> (domyślnie 1), aby sprawdzić wynik w kanale, na którym się znajdujesz, /leaderboard channel <strona> <id kanału>, aby sprawdzić wynik innego kanału, lub /leaderboard me, aby sprawdzić swój obecny wynik",
+				"leave": "Opuść kolejkę",
+				"leaveteam": "Zostaw swój zespół",
+				"listteams": "Zawiera listę wszystkich drużyn w gildii. \nSposób użycia: /listteam 1 na pierwszej stronie i tak dalej",
+				"ongoinggames": "Sprawdź aktualne gry!",
+				"pendinginvites": "Sprawdź kto Cię zaprosił!",
+				"q": "Wejdź do kolejki. \nAby to zrobić, wykonaj /q i otaguj innych członków drużyny (w zależności od qeueSize) przykład: /q @Dany @Johny @Tony @David (usuwa drużynę po 45 minutach, jeśli nie wykonano żadnej gry)",
+				"report": "Kończy grę, dając zwycięskiej drużynie jedno zwycięstwo i odwrotnie, drużynie przegrywającej. \nSposób użycia: /zgłoś wygraną LUB /zgłoś utratę",
+				"reset": "Resetuje wynik pojedynczego zespołu (/reset team nazwazespołu) lub całego kanału, w którym to polecenie jest wstawione (/reset channel)",
+				"status": "Sprawdź stan kolejki",
+				"whois": "Sprawdź członków zespołu, użycie: /whois Maniacs lub /whois, aby sprawdzić swój zespół"
+			}
+		},
+		"funny_text_hover_server": "Bruh to nie jest niezgoda",
+		"funny_text_typing_zone": "Dodaj nowe polecenie (100% działa)",
+		"general_help": "Ogólna pomoc",
+		"help_pages": "Strony pomocy",
+		"solos": "solówki",
+		"teams": "zespoły",
+		"you": "Ty",
+		"years_ago": "5000 lat temu"
+	},
+	"home": {
+		"commands_button": "Sprawdź polecenia",
+		"commands_description": "Bot oferuje wiele poleceń z możliwością grania w gry z losowymi zespołami lub kapitanami, sprawdzania tabel liderów kanału i resetowania wspomnianych tabel liderów, lista staje się coraz większa!",
+		"commands_title": "Polecenia w Twojej dłoni",
+		"discord_button": "Zaloguj się przez Discord",
+		"invite_bot_button": "Zaproś bota na serwer",
+		"main_title": "Twórz własne systemy rankingowe w Discordzie",
+		"main_description": "Tworzenie własnego niestandardowego systemu rankingowego nigdy nie było łatwiejsze, po prostu dodaj naszego bota do swojego serwera i rozpocznij zabawę!"
+	},
+	"languages": {
+		"de": "Niemiecki",
+		"en": "język angielski",
+		"es": "hiszpański",
+		"fr": "Francuski",
+		"it": "Włoski",
+		"ja": "język japoński",
+		"pt": "portugalski",
+		"ru": "Rosyjski",
+		"zh": "chiński"
+	},
+	"leaderboard": {
+		"channels": "Kanały",
+		"leaderboard": "Tablica wyników",
+		"losses": "Straty",
+		"mmr": "MMR",
+		"username": "Nazwa użytkownika",
+		"winrate": "Współczynnik wygranych",
+		"wins": "Wygrane",
+		"no_users_found": "Nie znaleziono użytkowników"
+	},
+	"authenticating": "Uwierzytelnianie"
+}

@@ -1,6 +1,7 @@
 <script>
 	import ChannelList from "./channelList.svelte";
 	import { tooltip } from "../tooltip/tooltip.js";
+	import { goto } from "$app/navigation";
 
 	export let servers = [];
 	export let userData;
@@ -15,6 +16,10 @@
 				"Content-Type": "application/json",
 			},
 		});
+
+		if (/^(4|5)/.test(channelsReq.status)) {
+			goto(`/error?code=${channelsReq.status}&data=${channelsReq.statusText}`);
+		}
 
 		return await channelsReq.json();
 	};

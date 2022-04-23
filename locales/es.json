@@ -1,0 +1,86 @@
+{
+	"404": "Página no encontrada",
+	"commands": {
+		"commands_info": {
+			"general help": {
+				"config": "Configure el canal de emparejamiento, use: /config createVoiceChannels en",
+				"credits": "Muestra quién hizo el bot (está caliente) y algunos datos útiles",
+				"examplesolos": "Te da un ejemplo de cómo usar la versión de solos para el bot.",
+				"helpsolosmatchmaking": "Comandos para el emparejamiento de solos",
+				"helpteamsmatchmaking": "Comandos para el emparejamiento de equipos",
+				"queuetype": "Establecer el tipo de cola para un canal, uso: /queuetype <queueSize> <queueMode>"
+			},
+			"solos": {
+				"cancel": "Cancelar el juego. \nLos administradores también pueden hacer /cancel force gameId para forzar la cancelación de un juego",
+				"changegame": "Cancela/revierte la puntuación de un juego terminado. \nUso: /changegame (gameid) cancel, este ejemplo cancelará el juego, ya que nunca sucederá. \n/changegame (gameid) revertir, este ejemplo revertirá las puntuaciones",
+				"leaderboard": "Comprueba tu puntuación actual. \nUso: /leaderboard channel <page> (el valor predeterminado es 1) para comprobar la puntuación en el canal en el que se encuentra, /leaderboard channel <page> <channelid> para comprobar la puntuación de otro canal o /leaderboard me para comprobar su puntuación actual",
+				"leave": "dejar la cola",
+				"ongoinggames": "¡Consulta los juegos actuales! \nUso: /ongoinggames <página> (el valor predeterminado es 1)",
+				"q": "Ingrese a la cola (elimina al jugador después de 45 minutos si no se ha realizado ningún juego) (no es necesario configurar el usuario si el modo es solo) (Capitanes deshabilitados para colas con menos de 6 jugadores)",
+				"report": "Termina el juego, dando al equipo ganador una victoria y viceversa al equipo perdedor. \nUso: /reportar victoria O /reportar pérdida",
+				"reset": "Restablece la puntuación de un jugador individual (/reset player <discordid>) o de todo el canal donde se inserta este comando (/reset channel)",
+				"status": "Comprobar el estado de la cola"
+			},
+			"teams": {
+				"cancel": "Cancelar el juego. \nLos administradores también pueden hacer /cancel force gameId para forzar la cancelación de un juego",
+				"changegame": "Cancela/revierte la puntuación de un juego terminado. \nUso: /changegame (gameid) cancel, este ejemplo cancelará el juego, ya que nunca sucederá. \n/changegame (gameid) revertir, este ejemplo revertirá las puntuaciones",
+				"createteam": "Crea un equipo, uso: /createteam Maniacs",
+				"disband": "Elimina su equipo, los administradores también pueden eliminar un equipo escribiendo /disband teamname",
+				"giveownership": "Otorga la propiedad del equipo a un usuario específico. \nUso: /dar propiedad @dany",
+				"invite": "Invita a un usuario, uso: /invite @dany",
+				"jointeam": "Únase a un equipo que lo invitó, use: /jointeam Maniacs",
+				"kickplayer": "Expulsa a un jugador de tu equipo, uso: /kickplayer @dany o /kickplayer discordid",
+				"leaderboard": "Comprueba tu puntuación actual. \nUso: /leaderboard channel <page> (el valor predeterminado es 1) para comprobar la puntuación en el canal en el que se encuentra, /leaderboard channel <page> <channelid> para comprobar la puntuación de otro canal o /leaderboard me para comprobar su puntuación actual",
+				"leave": "dejar la cola",
+				"leaveteam": "deja tu equipo",
+				"listteams": "Enumera todo el equipo en un gremio. \nUso: /listteam 1 para la primera página, etc.",
+				"ongoinggames": "¡Consulta los juegos actuales!",
+				"pendinginvites": "¡Mira quién te invitó!",
+				"q": "Entra en la cola. \nPara hacer esto, haga /q y etiquete a sus otros compañeros de equipo (dependiendo del tamaño de qeue), ejemplo: /q @Dany @Johny @Tony @David (elimina el equipo después de 45 minutos si no se ha realizado ningún juego)",
+				"report": "Termina el juego, dando al equipo ganador una victoria y viceversa al equipo perdedor. \nUso: /reportar victoria O /reportar pérdida",
+				"reset": "Restablece la puntuación de un equipo individual (/reset team teamName) o de todo el canal donde se inserta este comando (/reset channel)",
+				"status": "Comprobar el estado de la cola",
+				"whois": "Verifique los miembros del equipo, use: /whois Maniacs o /whois para verificar su equipo"
+			}
+		},
+		"funny_text_hover_server": "Bruh esto no es discordia",
+		"funny_text_typing_zone": "Agregar un nuevo comando (100% funciona)",
+		"general_help": "Ayuda general",
+		"help_pages": "páginas de ayuda",
+		"solos": "solos",
+		"teams": "equipos",
+		"you": "Tú",
+		"years_ago": "hace 5000 años"
+	},
+	"home": {
+		"commands_button": "Revisa los comandos",
+		"commands_description": "El bot presenta múltiples comandos con la capacidad de jugar juegos con equipos o capitanes aleatorios, verificar las tablas de clasificación del canal y restablecer dichas tablas de clasificación, ¡la lista sigue creciendo y creciendo!",
+		"commands_title": "Comandos en la palma de tu mano",
+		"discord_button": "Iniciar sesión con Discord",
+		"invite_bot_button": "Invitar bot al servidor",
+		"main_title": "Crea tus propios sistemas de clasificación en Discord",
+		"main_description": "Crear su propio sistema de clasificación personalizado nunca fue tan fácil, simplemente agregue nuestro bot a su servidor y ¡que comience la diversión!"
+	},
+	"languages": {
+		"de": "Alemán",
+		"en": "inglés",
+		"es": "español",
+		"fr": "Francés",
+		"it": "italiano",
+		"ja": "japonés",
+		"pt": "portugués",
+		"ru": "ruso",
+		"zh": "Chino"
+	},
+	"leaderboard": {
+		"channels": "Canales",
+		"leaderboard": "Tabla de clasificación",
+		"losses": "Pérdidas",
+		"mmr": "MMR",
+		"username": "Nombre de usuario",
+		"winrate": "Ratio de victorias",
+		"wins": "victorias",
+		"no_users_found": "No se encontraron usuarios"
+	},
+	"authenticating": "autenticando"
+}

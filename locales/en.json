@@ -1,0 +1,87 @@
+{
+	"languages": {
+		"en": "English",
+		"es": "Spanish",
+		"fr": "French",
+		"de": "German",
+		"it": "Italian",
+		"pt": "Portuguese",
+		"ru": "Russian",
+		"ja": "Japanese",
+		"zh": "Chinese"
+	},
+	"authenticating": "Authenticating",
+	"404": "Page not Found",
+	"home": {
+		"discord_button": "Login with Discord",
+		"invite_bot_button": "Invite bot to server",
+		"main_title": "Create your own ranking systems in Discord",
+		"main_description": "Creating your own custom rankup system was never easier, just add our bot to your server and let the fun begin!",
+		"commands_title": "Commands at the palm of your hand",
+		"commands_description": "The bot features multiple commands with the ability to play games with random teams or captains, check the channel's leaderboards and reset said leaderboards, the list just keeps getting bigger and bigger!",
+		"commands_button": "Check the commands"
+	},
+	"leaderboard": {
+		"leaderboard": "Leaderboard",
+		"username": "Username",
+		"wins": "Wins",
+		"losses": "Losses",
+		"winrate": "Winrate",
+		"channels": "Channels",
+		"mmr": "MMR",
+		"no_users_found": "No users found"
+	},
+	"commands": {
+		"years_ago": "5000 years ago",
+		"you": "You",
+		"commands": "Commands",
+		"funny_text_hover_server": "Bruh this isn't discord",
+		"funny_text_typing_zone": "Add a new command (100% works)",
+		"help_pages": "Help pages",
+		"general_help": "General help",
+		"teams": "teams",
+		"solos": "solos",
+		"commands_info": {
+			"solos": {
+				"cancel": "Cancel the game. Administrators can also do /cancel force gameId to force a game cancellation",
+				"changegame": "Cancels/reverts score of a finished game. Usage: /changegame (gameid) cancel, this example will cancel the game, as it never happen. /changegame (gameid) revert, this example will revert the scores",
+				"leaderboard": "Checks your current score. Usage: /leaderboard channel <page> (default is 1) to check score in the channel youre in, /leaderboard channel <page> <channelid> to check the score of another channel, or /leaderboard me to check your current score",
+				"leave": "Leave the queue",
+				"ongoinggames": "Check the current games! Usage: /ongoinggames <page> (default is 1)",
+				"q": "Enter the queue (removes player after 45 minutes if no game has been made) (no need to set user if mode is solos) (Captains disabled for queues with less than 6 players)",
+				"report": "Ends the game, giving the wining team one win and vice versa to the losing team. Usage: /report win OR /report lose",
+				"reset": "Resets the score of an individual player (/reset player <discordid>) or the whole channel where this command is inserted (/reset channel)",
+				"status": "Check the queue status"
+			},
+			"teams": {
+				"cancel": "Cancel the game. Administrators can also do /cancel force gameId to force a game cancellation",
+				"changegame": "Cancels/reverts score of a finished game. Usage: /changegame (gameid) cancel, this example will cancel the game, as it never happen. /changegame (gameid) revert, this example will revert the scores",
+				"createteam": "Creates a team, usage: /createteam Maniacs",
+				"disband": "Deletes your team, admins can also delete a team by typing /disband teamname",
+				"giveownership": "Gives team ownership to a specific user. Usage: /giveownership @dany",
+				"invite": "Invites an user, usage: /invite @dany",
+				"jointeam": "Join a team that invited you, usage: /jointeam Maniacs",
+				"kickplayer": "Kicks a player from your team, usage: /kickplayer @dany or /kickplayer discordid",
+				"leaderboard": "Checks your current score. Usage: /leaderboard channel <page> (default is 1) to check score in the channel youre in, /leaderboard channel <page> <channelid> to check the score of another channel, or /leaderboard me to check your current score",
+				"leave": "Leave the queue",
+				"leaveteam": "Leave your team",
+				"listteams": "Lists all the team in a guild. Usage: /listteam 1 for the first page, and so on",
+				"ongoinggames": "Check the current games!",
+				"pendinginvites": "Check who invited you!",
+				"q": "Enter the queue. To do this do /q and tag your other teammates(depending on the qeueSize) example: /q @Dany @Johny @Tony @David (removes team after 45 minutes if no game has been made)",
+				"report": "Ends the game, giving the wining team one win and vice versa to the losing team. Usage: /report win OR /report lose",
+				"reset": "Resets the score of an individual team (/reset team teamName) or the whole channel where this command is inserted (/reset channel)",
+				"status": "Check the queue status",
+				"whois": "Check for team members, usage: /whois Maniacs, or /whois to check your team"
+			},
+			"general help": {
+				"config": "Configure the matchmaker channel, usage: /config createVoiceChannels on",
+				"credits": "Shows who made the bot (he's hot af) and some useful data",
+				"examplesolos": "Gives you an example of how to use the solos version for the bot.",
+				"helpsolosmatchmaking": "Commands for solos matchmaking",
+				"helpteamsmatchmaking": "Commands for teams matchmaking",
+				"queuetype": "Set the queue type for a channel, usage: /queuetype <queueSize> <queueMode>"
+			}
+		}
+	}
+}

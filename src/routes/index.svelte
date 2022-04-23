@@ -1,4 +1,5 @@
 <script>
+	import { _ } from "svelte-i18n";
 	import Navbar from "$lib/components/navbar.svelte";
 	import DiscordButton from "$lib/components/discordButton.svelte";
 	import Footer from "$lib/components/footer.svelte";
@@ -13,20 +14,19 @@
 	>
 		<div class="mt-15">
 			<h1 class="text-5xl lg:text-6xl heading text-white w-[9ch] lg:w-[11ch]">
-				Create your own ranking systems in Discord
+				{$_("home.main_title")}
 			</h1>
 			<p class="lg:text-xl text-gray-300 w-[40ch] lg:w-[50ch] mt-5">
-				Creating your own custom rankup system was never easier, just add our bot to your server and
-				let the fun begin!
+				{$_("home.main_description")}
 			</p>
 			<div class="flex mt-5">
 				<DiscordButton />
 				<button class="bg-deep-500 text-white lg:text-xl rounded-lg items-center p-3 ml-5">
-					Invite bot to server</button
+					{$_("home.invite_bot_button")}</button
 				>
 			</div>
 		</div>
-		<div class="flex mb-20 z-1 relative">
+		<div class="flex <lg:mb-10 z-1 relative">
 			<img src="/mainPageIcons/phoneGreenEclipse.png" class="mt-10" alt="Eclipse" />
 			<img
 				src="/mainPageIcons/phoneOrangeEllipse.png"
@@ -64,14 +64,14 @@
 		</div>
 		<img
 			src="/mainPageIcons/rightOrangeEllipse.png"
-			class="absolute right-[-200px] mt-50 z-0 object-pos <lg:hidden"
+			class="absolute right-[-200px] mt-40 z-0 object-pos <lg:hidden"
 			alt=""
 		/>
 	</div>
 </div>
 <MainPageInfo
-	title="Commands at the palm of your hand"
-	description=" The bot features multiple commands with the ability to play games with random teams or captains, check the channel's leaderboards and reset said leaderboards, the list just keeps getting bigger and bigger!"
+	title={$_("home.commands_title")}
+	description={$_("home.commands_description")}
 	redirectingLink="/commands"
 />
 <Footer />

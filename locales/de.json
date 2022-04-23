@@ -1,0 +1,86 @@
+{
+	"404": "Seite nicht gefunden",
+	"commands": {
+		"commands_info": {
+			"general help": {
+				"config": "Konfigurieren Sie den Matchmaker-Kanal, Verwendung: /config createVoiceChannels on",
+				"credits": "Zeigt, wer den Bot gemacht hat (er ist heiß) und einige nützliche Daten",
+				"examplesolos": "Gibt Ihnen ein Beispiel dafür, wie Sie die Solo-Version für den Bot verwenden.",
+				"helpsolosmatchmaking": "Befehle für Solo-Matchmaking",
+				"helpteamsmatchmaking": "Befehle für das Matchmaking von Teams",
+				"queuetype": "Legen Sie den Warteschlangentyp für einen Kanal fest, Verwendung: /queuetype <queueSize> <queueMode>"
+			},
+			"solos": {
+				"cancel": "Spiel abbrechen. \nAdministratoren können auch /cancel force gameId verwenden, um einen Spielabbruch zu erzwingen",
+				"changegame": "Spielstand eines beendeten Spiels abbrechen/zurücksetzen. \nVerwendung: /changegame (gameid) cancel, dieses Beispiel bricht das Spiel ab, da es nie passiert. \n/changegame (gameid) revert, dieses Beispiel setzt die Spielstände zurück",
+				"leaderboard": "Überprüft Ihre aktuelle Punktzahl. \nVerwendung: /leaderboard channel <page> (Standard ist 1), um die Punktzahl in dem Kanal zu überprüfen, in dem Sie sich befinden, /leaderboard channel <page> <channelid>, um die Punktzahl eines anderen Kanals zu überprüfen, oder /leaderboard me, um Ihre aktuelle Punktzahl zu überprüfen",
+				"leave": "Verlassen Sie die Warteschlange",
+				"ongoinggames": "Überprüfen Sie die aktuellen Spiele! \nVerwendung: /ongoinggames <Seite> (Standard ist 1)",
+				"q": "Betritt die Warteschlange (entfernt den Spieler nach 45 Minuten, wenn kein Spiel gemacht wurde) (keine Notwendigkeit, den Benutzer festzulegen, wenn der Modus Solo ist) (Kapitäne deaktiviert für Warteschlangen mit weniger als 6 Spielern)",
+				"report": "Beendet das Spiel und gibt dem Gewinnerteam einen Sieg und umgekehrt dem Verliererteam. \nVerwendung: /report win ODER /report loss",
+				"reset": "Setzt den Punktestand eines einzelnen Spielers (/reset player <discordid>) oder des gesamten Kanals zurück, in den dieser Befehl eingefügt wird (/reset channel)",
+				"status": "Überprüfen Sie den Warteschlangenstatus"
+			},
+			"teams": {
+				"cancel": "Spiel abbrechen. \nAdministratoren können auch /cancel force gameId verwenden, um einen Spielabbruch zu erzwingen",
+				"changegame": "Spielstand eines beendeten Spiels abbrechen/zurücksetzen. \nVerwendung: /changegame (gameid) cancel, dieses Beispiel bricht das Spiel ab, da es nie passiert. \n/changegame (gameid) revert, dieses Beispiel setzt die Spielstände zurück",
+				"createteam": "Erstellt ein Team, Verwendung: /createteam Maniacs",
+				"disband": "Löscht Ihr Team, Administratoren können ein Team auch löschen, indem sie /disband teamname eingeben",
+				"giveownership": "Weist einem bestimmten Benutzer Teambesitz zu. \nVerwendung: /giveownership @dany",
+				"invite": "Lädt einen Benutzer ein, Verwendung: /invite @dany",
+				"jointeam": "Tritt einem Team bei, das dich eingeladen hat, Verwendung: /jointeam Maniacs",
+				"kickplayer": "Kickt einen Spieler aus deinem Team, Verwendung: /kickplayer @dany oder /kickplayer discordid",
+				"leaderboard": "Überprüft Ihre aktuelle Punktzahl. \nVerwendung: /leaderboard channel <page> (Standard ist 1), um die Punktzahl in dem Kanal zu überprüfen, in dem Sie sich befinden, /leaderboard channel <page> <channelid>, um die Punktzahl eines anderen Kanals zu überprüfen, oder /leaderboard me, um Ihre aktuelle Punktzahl zu überprüfen",
+				"leave": "Verlassen Sie die Warteschlange",
+				"leaveteam": "Verlassen Sie Ihr Team",
+				"listteams": "Listet alle Teams in einer Gilde auf. \nVerwendung: /listteam 1 für die erste Seite und so weiter",
+				"ongoinggames": "Überprüfen Sie die aktuellen Spiele!",
+				"pendinginvites": "Überprüfen Sie, wer Sie eingeladen hat!",
+				"q": "Geben Sie die Warteschlange ein. \nUm dies zu tun, mache /q und markiere deine anderen Teamkollegen (abhängig von der qeueSize) Beispiel: /q @Dany @Johny @Tony @David (entfernt das Team nach 45 Minuten, wenn kein Spiel gemacht wurde)",
+				"report": "Beendet das Spiel und gibt dem Gewinnerteam einen Sieg und umgekehrt dem Verliererteam. \nVerwendung: /report win ODER /report loss",
+				"reset": "Setzt die Punktzahl eines einzelnen Teams (/reset team teamName) oder des gesamten Kanals zurück, in den dieser Befehl eingefügt wird (/reset channel)",
+				"status": "Überprüfen Sie den Warteschlangenstatus",
+				"whois": "Suchen Sie nach Teammitgliedern, verwenden Sie: /whois Maniacs oder /whois, um Ihr Team zu überprüfen"
+			}
+		},
+		"funny_text_hover_server": "Bruh, das ist keine Zwietracht",
+		"funny_text_typing_zone": "Fügen Sie einen neuen Befehl hinzu (funktioniert zu 100 %)",
+		"general_help": "Allgemeine Hilfe",
+		"help_pages": "Hilfeseiten",
+		"solos": "Soli",
+		"teams": "Mannschaften",
+		"you": "Du",
+		"years_ago": "Vor 5000 Jahren"
+	},
+	"home": {
+		"commands_button": "Überprüfen Sie die Befehle",
+		"commands_description": "Der Bot verfügt über mehrere Befehle mit der Fähigkeit, Spiele mit zufälligen Teams oder Kapitänen zu spielen, die Bestenlisten des Kanals zu überprüfen und besagte Bestenlisten zurückzusetzen, die Liste wird immer länger!",
+		"commands_title": "Befehle auf der Handfläche",
+		"discord_button": "Melden Sie sich mit Discord an",
+		"invite_bot_button": "Bot zum Server einladen",
+		"main_title": "Erstellen Sie Ihre eigenen Ranking-Systeme in Discord",
+		"main_description": "Das Erstellen Ihres eigenen benutzerdefinierten Rangaufwertungssystems war noch nie so einfach, fügen Sie einfach unseren Bot zu Ihrem Server hinzu und lassen Sie den Spaß beginnen!"
+	},
+	"languages": {
+		"de": "Deutsch",
+		"en": "Englisch",
+		"es": "Spanisch",
+		"fr": "Französisch",
+		"it": "Italienisch",
+		"ja": "japanisch",
+		"pt": "Portugiesisch",
+		"ru": "Russisch",
+		"zh": "Chinesisch"
+	},
+	"leaderboard": {
+		"channels": "Kanäle",
+		"leaderboard": "Bestenliste",
+		"losses": "Verluste",
+		"mmr": "MMR",
+		"username": "Nutzername",
+		"winrate": "Gewinnrate",
+		"wins": "Gewinnt",
+		"no_users_found": "Keine Benutzer gefunden"
+	},
+	"authenticating": "Authentifizieren"
+}

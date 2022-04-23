@@ -1,0 +1,86 @@
+{
+	"404": "Page non trouvée",
+	"commands": {
+		"commands_info": {
+			"general help": {
+				"config": "Configurez le canal matchmaker, utilisez : /config createVoiceChannels sur",
+				"credits": "Montre qui a créé le bot (il est chaud) et quelques données utiles",
+				"examplesolos": "Vous donne un exemple d'utilisation de la version solos pour le bot.",
+				"helpsolosmatchmaking": "Commandes pour le matchmaking en solo",
+				"helpteamsmatchmaking": "Commandes pour le matchmaking des équipes",
+				"queuetype": "Définir le type de file d'attente pour un canal, utilisation : /queuetype <queueSize> <queueMode>"
+			},
+			"solos": {
+				"cancel": "Annulez le jeu. \nLes administrateurs peuvent également faire /cancel force gameId pour forcer l'annulation d'un jeu",
+				"changegame": "Annule / rétablit le score d'un jeu terminé. \nUtilisation : /changegame (gameid) cancel, cet exemple annulera le jeu, car cela n'arrivera jamais. \n/changegame (gameid) revert, cet exemple inversera les scores",
+				"leaderboard": "Vérifie votre score actuel. \nUtilisation : /leaderboard channel <page> (la valeur par défaut est 1) pour vérifier le score du canal dans lequel vous êtes, /leaderboard channel <page> <channelid> pour vérifier le score d'un autre canal, ou /leaderboard me pour vérifier votre score actuel",
+				"leave": "Quitter la file d'attente",
+				"ongoinggames": "Vérifiez les jeux actuels! \nUtilisation : /ongoinggames <page> (la valeur par défaut est 1)",
+				"q": "Entrez dans la file d'attente (retire le joueur après 45 minutes si aucune partie n'a été faite) (pas besoin de définir l'utilisateur si le mode est en solo) (Capitaines désactivés pour les files d'attente de moins de 6 joueurs)",
+				"report": "Termine le jeu, donnant une victoire à l'équipe gagnante et vice versa à l'équipe perdante. \nUtilisation : /report win OU /report lose",
+				"reset": "Réinitialise le score d'un joueur individuel (/reset player <discordid>) ou de tout le canal où cette commande est insérée (/reset channel)",
+				"status": "Vérifier l'état de la file d'attente"
+			},
+			"teams": {
+				"cancel": "Annulez le jeu. \nLes administrateurs peuvent également faire /cancel force gameId pour forcer l'annulation d'un jeu",
+				"changegame": "Annule / rétablit le score d'un jeu terminé. \nUtilisation : /changegame (gameid) cancel, cet exemple annulera le jeu, car cela n'arrivera jamais. \n/changegame (gameid) revert, cet exemple inversera les scores",
+				"createteam": "Crée une équipe, utilisation : /createteam Maniacs",
+				"disband": "Supprime votre équipe, les administrateurs peuvent également supprimer une équipe en tapant / dissoudre le nom de l'équipe",
+				"giveownership": "Donne la propriété de l'équipe à un utilisateur spécifique. \nUtilisation : /giveownership @dany",
+				"invite": "Invite un utilisateur, utilisation : /invite @dany",
+				"jointeam": "Rejoignez une équipe qui vous a invité, utilisez : /jointeam Maniacs",
+				"kickplayer": "Kick un joueur de votre équipe, utilisez : /kickplayer @dany ou /kickplayer discordid",
+				"leaderboard": "Vérifie votre score actuel. \nUtilisation : /leaderboard channel <page> (la valeur par défaut est 1) pour vérifier le score du canal dans lequel vous êtes, /leaderboard channel <page> <channelid> pour vérifier le score d'un autre canal, ou /leaderboard me pour vérifier votre score actuel",
+				"leave": "Quitter la file d'attente",
+				"leaveteam": "Quittez votre équipe",
+				"listteams": "Répertorie toute l'équipe d'une guilde. \nUtilisation : /listteam 1 pour la première page, etc.",
+				"ongoinggames": "Vérifiez les jeux actuels!",
+				"pendinginvites": "Vérifiez qui vous a invité !",
+				"q": "Entrez dans la file d'attente. \nPour ce faire, faites /q et taguez vos autres coéquipiers (en fonction de la qeueSize) exemple : /q @Dany @Johny @Tony @David (supprime l'équipe après 45 minutes si aucune partie n'a été faite)",
+				"report": "Termine le jeu, donnant une victoire à l'équipe gagnante et vice versa à l'équipe perdante. \nUtilisation : /report win OU /report lose",
+				"reset": "Réinitialise le score d'une équipe individuelle (/reset team teamName) ou de tout le canal où cette commande est insérée (/reset channel)",
+				"status": "Vérifier l'état de la file d'attente",
+				"whois": "Vérifiez les membres de l'équipe, utilisez : /whois Maniacs, ou /whois pour vérifier votre équipe"
+			}
+		},
+		"funny_text_hover_server": "Bruh ce n'est pas la discorde",
+		"funny_text_typing_zone": "Ajouter une nouvelle commande (100 % fonctionne)",
+		"general_help": "Aide générale",
+		"help_pages": "Pages d'aide",
+		"solos": "solos",
+		"teams": "équipes",
+		"you": "Tu",
+		"years_ago": "il y a 5000 ans"
+	},
+	"home": {
+		"commands_button": "Vérifiez les commandes",
+		"commands_description": "Le bot propose plusieurs commandes avec la possibilité de jouer à des jeux avec des équipes ou des capitaines aléatoires, de vérifier les classements de la chaîne et de réinitialiser lesdits classements, la liste ne cesse de s'allonger !",
+		"commands_title": "Commandes au creux de la main",
+		"discord_button": "Se connecter avec Discord",
+		"invite_bot_button": "Inviter le bot sur le serveur",
+		"main_title": "Créez vos propres systèmes de classement dans Discord",
+		"main_description": "Créer votre propre système de classement personnalisé n'a jamais été aussi facile, ajoutez simplement notre bot à votre serveur et laissez le plaisir commencer !"
+	},
+	"languages": {
+		"de": "Allemand",
+		"en": "Anglais",
+		"es": "Espagnol",
+		"fr": "Français",
+		"it": "italien",
+		"ja": "Japonais",
+		"pt": "Portugais",
+		"ru": "russe",
+		"zh": "Chinois"
+	},
+	"leaderboard": {
+		"channels": "Chaînes",
+		"leaderboard": "Classement",
+		"losses": "Pertes",
+		"mmr": "ROR",
+		"username": "Nom d'utilisateur",
+		"winrate": "Taux de réussite",
+		"wins": "Gagne",
+		"no_users_found": "Aucun utilisateur trouvé"
+	},
+	"authenticating": "Authentification"
+}

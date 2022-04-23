@@ -1,5 +1,27 @@
 <script lang="ts">
 	import "virtual:windi.css";
+	import en from "../../locales/en.json";
+	import it from "../../locales/it.json";
+	import pl from "../../locales/pl.json";
+	import es from "../../locales/es.json";
+	import pt from "../../locales/pt.json";
+	import fr from "../../locales/fr.json";
+	import de from "../../locales/de.json";
+
+	import { addMessages, init, getLocaleFromNavigator } from "svelte-i18n";
+
+	addMessages("pt", pt);
+	addMessages("en", en);
+	addMessages("fr", fr);
+	addMessages("es", es);
+	addMessages("de", de);
+	addMessages("pl", pl);
+	addMessages("it", it);
+
+	init({
+		fallbackLocale: "en",
+		initialLocale: getLocaleFromNavigator(),
+	});
 </script>
 
 <slot />
