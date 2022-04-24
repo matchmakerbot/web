@@ -1,7 +1,8 @@
 <script>
 	import { tooltip } from "$lib/tooltip/tooltip.js";
 	import { dictionary } from "svelte-i18n";
-	import { locale, locales } from "svelte-i18n";
+	import { fullLang } from "/src/i18n.js";
+	import { locale } from "svelte-i18n";
 	import { _ } from "svelte-i18n";
 	import Select from "svelte-select";
 
@@ -10,8 +11,9 @@
 	let choosenChannel = "general help";
 	let currentText = "";
 	let i = 0;
+	let isHidden = true;
 	let helpPages = $dictionary[$locale === "en-US" ? "en" : $locale].commands.commands_info;
-	$: locale, helpPages = $dictionary[$locale === "en-US" ? "en" : $locale].commands.commands_info;
+	$: locale, (helpPages = $dictionary[$locale === "en-US" ? "en" : $locale].commands.commands_info);
 
 	const addText = (keyEvent) => {
 		if (keyEvent.key === "Enter" && keyEvent.target.value.length > 0) {
@@ -28,7 +30,7 @@
 
 <div class="flex">
 	<div
-		class="bg-deep-500 flex justify-between items-center flex-col min-h-100vh children:m-3 children:w-50px <lg:hidden"
+		class="bg-deep-500 flex justify-between items-center flex-col min-h-100vh children:m-3 children:w-50px <lg:{isHidden && "hidden"}"
 	>
 		<div>
 			<button title={$_("commands.funny_text_hover_server")} use:tooltip>
@@ -44,8 +46,8 @@
 			<div class="language">
 				<Select
 					on:select={(event) => ($locale = event.detail.value)}
-					placeholder={$locale === "en-US" ? "en" : $locale}
-					items={$locales}
+					placeholder=""
+					items={fullLang}
 					isSearchable={false}
 				/>
 			</div>
@@ -58,7 +60,7 @@
 			/>
 		</div>
 	</div>
-	<div class="bg-deep-700 min-w-250px <lg:hidden">
+	<div class="bg-deep-700 min-w-250px <lg:{isHidden && "hidden"}">
 		<h1 class="text-white mt-7 ml-5 font-sans-bold text-l">{$_("commands.commands")}</h1>
 		<div class="h-3px mt-7 bg-deep-500" />
 		<div class="flex flex-col mt-7 ml-5 text-left">
@@ -74,16 +76,17 @@
 			{/each}
 		</div>
 	</div>
-	<img src="/bars.png" class="absolute w-0px <lg:w-50px mt-3 ml-5" alt="" />
-	<div class="h-100vh" />
-	<div class="relative ml-5 mr-5  w-[100%]">
-		<div class="absolute bottom-0 w-[100%]">
+	<div class="relative w-[100%] h-100vh">
+		<div class="relative z-1 bg-deep-900 <lg:mb-5 <lg:h-75px">
+			<img src="/bars.png" on:click={() => isHidden=!isHidden} class="absolute w-0px <lg:w-50px mt-3 ml-3" alt="" />
+		</div>
+		<div class="absolute bottom-0 w-[100%] ml-5 flex flex-col z-0">
 			<DiscordMessage commands={helpPages[choosenChannel]} />
 			<input
 				type="text"
 				bind:value={currentText}
 				on:keydown={(key) => addText(key)}
-				class="discordText bg-deep-400 px-5 py-4 rounded-xl mt-2 mb-5 text-white focus:outline-0 w-[100%]"
+				class="discordText bg-deep-400 px-5 py-4 rounded-xl mt-2 mb-5 text-white focus:outline-0 mr-10"
 				placeholder={$_("commands.funny_text_typing_zone")}
 			/>
 		</div>
@@ -92,12 +95,14 @@
 
 <style>
 	.language {
-		text-align: center;
-		--background-color: black;
+		background-image: url("/servers/lang.png");
+		background-position: center;
+		background-repeat: no-repeat;
 		--border: 2px solid #394b8d;
 		--borderRadius: 100%;
 		--height: 50px;
-		color: white;
+		--inputColor: rgba(255, 255, 255, 0);
+		color: rgba(255, 255, 255, 0);
 		--background: rgba(255, 255, 255, 0);
 		--listBackground: #394b8d;
 		--listMaxHeight: 100vh;
@@ -105,6 +110,7 @@
 		--itemIsActiveBG: #394b8d;
 		--itemHoverBG: #b9c2e3;
 		--itemColor: white;
+		--itemHoverColor: black;
 		--clearSelectColor: rgba(255, 255, 255, 0);
 		--borderFocusColor: #151d35;
 		--indicatorColor: rgba(255, 255, 255, 0);
@@ -113,6 +119,5 @@
 		--listRight: auto;
 		--selectedItemPadding: 0px;
 		--internalPadding: 0px;
-		--margin: 0px -2px;
 	}
 </style>

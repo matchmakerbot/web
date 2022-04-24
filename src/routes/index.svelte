@@ -1,5 +1,7 @@
 <script>
 	import { _ } from "svelte-i18n";
+	import { goto } from "$app/navigation";
+	import Icon from "@iconify/svelte";
 	import Navbar from "$lib/components/navbar.svelte";
 	import DiscordButton from "$lib/components/discordButton.svelte";
 	import Footer from "$lib/components/footer.svelte";
@@ -21,8 +23,17 @@
 			</p>
 			<div class="flex mt-5">
 				<DiscordButton />
-				<button class="bg-deep-500 text-white lg:text-xl rounded-lg items-center p-3 ml-5">
-					{$_("home.invite_bot_button")}</button
+				<button
+					class="bg-deep-500 text-white lg:text-xl rounded-lg items-center p-3 ml-5"
+					on:click={() =>
+						goto(
+							"https://discord.com/api/oauth2/authorize?client_id=571839826744180736&permissions=2147486800&scope=applications.commands%20bot"
+						)}
+				>
+					{$_("home.invite_bot_button")}<Icon
+						icon="akar-icons:arrow-up-right"
+						color="white"
+					/></button
 				>
 			</div>
 		</div>

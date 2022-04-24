@@ -28,10 +28,10 @@
 		})();
 </script>
 
-<div class="mainDiv mb-auto flex flex-col children:mt-6 max-h-90vh overflow-scroll">
+<div class="mainDiv mb-auto flex flex-col children:mt-6 max-h-90vh overflow-scroll mr-10">
 	{#each Object.entries(commands) as [command, description]}
 		<div class="flex">
-			<img src="/botIcon.png" class="rounded-full w-[40px] h-[40px]" alt="" />
+			<img src="/botIcon.png" class="rounded-full min-w-[40px] h-[40px]" alt="" />
 			<div class="ml-5 font-ptsans">
 				<div class="flex">
 					<h1 class="text-[#ED502F]">
@@ -39,7 +39,7 @@
 							? "Matchmaker Bot"
 							: command}
 					</h1>
-					<h1 class="ml-3 text-deep-500">{$_("commands.years_ago")}</h1>
+					<h1 class="ml-3 text-deep-400">{$_("commands.years_ago")}</h1>
 				</div>
 				<h1 class="text-white">{description}</h1>
 			</div>

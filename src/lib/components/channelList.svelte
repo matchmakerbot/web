@@ -83,10 +83,4 @@
 		{/each}
 	</div>
 </div>
-<img
-	on:click={() => console.log("a")}
-	src="/bars.png"
-	class="absolute w-0px <lg:w-50px mt-3 ml-5"
-	alt=""
-/>
 <Leaderboard users={choosenLeaderboard} channelData={choosenChannel} />

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import "virtual:windi.css";
 	import en from "../../locales/en.json";
 	import it from "../../locales/it.json";
@@ -7,6 +7,7 @@
 	import pt from "../../locales/pt.json";
 	import fr from "../../locales/fr.json";
 	import de from "../../locales/de.json";
+	import ru from "../../locales/ru.json";
 
 	import { addMessages, init, getLocaleFromNavigator } from "svelte-i18n";
 
@@ -17,6 +18,7 @@
 	addMessages("de", de);
 	addMessages("pl", pl);
 	addMessages("it", it);
+	addMessages("ru", ru);
 
 	init({
 		fallbackLocale: "en",

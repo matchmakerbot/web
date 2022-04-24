@@ -1,10 +1,11 @@
 <script>
-	import { locale, locales } from "svelte-i18n";
+	import { locale } from "svelte-i18n";
 	import { goto } from "$app/navigation";
 	import Select from "svelte-select";
 
 	import ChannelList from "./channelList.svelte";
 	import { tooltip } from "../tooltip/tooltip.js";
+	import { fullLang } from "/src/i18n.js";
 
 	export let servers = [];
 	export let userData;
@@ -73,8 +74,8 @@
 		<div class="language">
 			<Select
 				on:select={(event) => ($locale = event.detail.value)}
-				placeholder={$locale === "en-US" ? "en" : $locale}
-				items={$locales}
+				placeholder=""
+				items={fullLang}
 				isSearchable={false}
 			/>
 		</div>
@@ -91,27 +92,29 @@
 
 <style>
 	.language {
-		--background-color: black;
+		background-image: url("/servers/lang.png");
+		background-position: center;
+		background-repeat: no-repeat;
 		--border: 2px solid #394b8d;
 		--borderRadius: 100%;
 		--height: 50px;
-		color: white;
+		--inputColor: rgba(255, 255, 255, 0);
+		color: rgba(255, 255, 255, 0);
 		--background: rgba(255, 255, 255, 0);
 		--listBackground: #394b8d;
 		--listMaxHeight: 100vh;
 		--listBorder: 2px solid #394b8d;
 		--itemIsActiveBG: #394b8d;
 		--itemHoverBG: #b9c2e3;
+		--itemHoverColor: black;
 		--itemColor: white;
 		--clearSelectColor: rgba(255, 255, 255, 0);
 		--borderFocusColor: #151d35;
 		--indicatorColor: rgba(255, 255, 255, 0);
 		--clearSelectFocusColor: rgba(255, 255, 255, 0);
-		--listRight: auto;
 		--inputFontSize: 10px;
 		--listRight: auto;
 		--selectedItemPadding: 0px;
 		--internalPadding: 0px;
-		--margin: 0px -2px;
 	}
 </style>

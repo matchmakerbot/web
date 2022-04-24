@@ -1,13 +1,14 @@
 <script>
 	import { _ } from "svelte-i18n";
-
+	import { isHidden } from "src/stores/leaderboard";
 	import { paginate, DarkPaginationNav } from "svelte-paginate";
 	import { fetchLeaderboard } from "./channelList.svelte";
-	export let users = { data: [], total: 0 };
-	export let channelData = {};
 
 	let currentPage = 1;
 	let pageSize = 10;
+
+	export let users = { data: [], total: 0 };
+	export let channelData = {};
 
 	const onPageChange = async (data) => {
 		currentPage = data.detail.page;

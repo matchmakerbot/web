@@ -19,7 +19,7 @@
 		</p>
 		<button
 			on:click={() => goto(redirectingLink)}
-			class="bg-deep-500 text-white text-xl rounded-lg items-center p-3 mt-5"
+			class="bg-deep-500 text-white text-xl rounded-lg p-3 mt-5"
 		>
 			{$_("home.commands_button")} <Icon icon="akar-icons:arrow-up-right" color="white" /></button
 		>
