@@ -30,7 +30,8 @@
 
 <div class="flex">
 	<div
-		class="bg-deep-500 flex justify-between items-center flex-col min-h-100vh children:m-3 children:w-50px <lg:{isHidden && "hidden"}"
+		class="bg-deep-500 flex justify-between items-center flex-col min-h-100vh children:m-3 children:w-50px <lg:{isHidden &&
+			'hidden'}"
 	>
 		<div>
 			<button title={$_("commands.funny_text_hover_server")} use:tooltip>
@@ -60,7 +61,7 @@
 			/>
 		</div>
 	</div>
-	<div class="bg-deep-700 min-w-250px <lg:{isHidden && "hidden"}">
+	<div class="bg-deep-700 min-w-250px <lg:{isHidden && 'hidden'}">
 		<h1 class="text-white mt-7 ml-5 font-sans-bold text-l">{$_("commands.commands")}</h1>
 		<div class="h-3px mt-7 bg-deep-500" />
 		<div class="flex flex-col mt-7 ml-5 text-left">
@@ -77,10 +78,19 @@
 		</div>
 	</div>
 	<div class="relative w-[100%] h-100vh">
-		<div class="relative z-1 bg-deep-900 <lg:mb-5 <lg:h-75px">
-			<img src="/bars.png" on:click={() => isHidden=!isHidden} class="absolute w-0px <lg:w-50px mt-3 ml-3" alt="" />
+		<div class="relative z-1 bg-deep-900 <lg:mb-5 <lg:h-65px">
+			<img
+				src="/bars.png"
+				on:click={() => (isHidden = !isHidden)}
+				class="absolute w-0px <lg:w-40px mt-3 ml-3"
+				alt=""
+			/>
 		</div>
-		<div class="absolute bottom-0 w-[100%] ml-5 flex flex-col z-0">
+		<div
+			class="absolute bottom-0 w-[100%] {choosenChannel !== 'general help'
+				? '<lg:h-[95%]'
+				: ''} pt-5 ml-5 flex flex-col z-0"
+		>
 			<DiscordMessage commands={helpPages[choosenChannel]} />
 			<input
 				type="text"

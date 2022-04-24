@@ -1,3 +1,12 @@
-import { writable } from 'svelte/store';
+import { writable } from "svelte/store";
 
-export const isHidden = writable(true);
+const isHiddenStore = () => {
+	const { subscribe, update } = writable(true);
+
+	return {
+		subscribe,
+		update: () => update((n) => !n),
+	};
+};
+
+export const isHidden = isHiddenStore();

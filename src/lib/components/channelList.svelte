@@ -22,6 +22,7 @@
 </script>
 
 <script>
+	import { isHidden } from "/src/stores/leaderboard";
 	import Leaderboard from "./leaderboard.svelte";
 	import { _ } from "svelte-i18n";
 
@@ -65,7 +66,7 @@
 	};
 </script>
 
-<div class="bg-deep-700 min-w-250px <lg:hidden">
+<div class="bg-deep-700 min-w-250px <lg:{$isHidden && 'hidden'}">
 	<h1 class="text-white mt-7 ml-5 font-sans-bold text-l">
 		{guildName != null ? guildName : "No Servers"}
 	</h1>

@@ -6,6 +6,7 @@
 	import ChannelList from "./channelList.svelte";
 	import { tooltip } from "../tooltip/tooltip.js";
 	import { fullLang } from "/src/i18n.js";
+	import { isHidden } from "/src/stores/leaderboard";
 
 	export let servers = [];
 	export let userData;
@@ -54,7 +55,8 @@
 </script>
 
 <div
-	class="bg-deep-500 flex justify-between items-center flex-col min-h-100vh children:m-3 children:w-50px <lg:hidden"
+	class="bg-deep-500 flex justify-between items-center flex-col min-h-100vh children:m-3 children:w-50px <lg:{$isHidden &&
+		'hidden'}"
 >
 	<div>
 		{#each servers as server}
