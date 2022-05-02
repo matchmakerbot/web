@@ -35,11 +35,7 @@
 	>
 		<div>
 			<button title={$_("commands.funny_text_hover_server")} use:tooltip>
-				<img
-					class="rounded-3xl"
-					src="/cat.png"
-					alt=""
-				/>
+				<img class="rounded-3xl" src="/cat.png" alt="" />
 			</button>
 		</div>
 		<div class="flex flex-col children:mb-2">
@@ -52,13 +48,7 @@
 					isSearchable={false}
 				/>
 			</div>
-			<img
-				class="rounded-full"
-				src= "/cat.png"
-				alt=""
-				title="You"
-				use:tooltip
-			/>
+			<img class="rounded-full" src="/cat.png" alt="" use:tooltip />
 		</div>
 	</div>
 	<div class="bg-deep-700 min-w-250px <lg:{isHidden && 'hidden'}">

@@ -24,6 +24,10 @@ const config = {
 				fs: {
 					allow: [".."],
 				},
+				https: !process.env.DEV && {
+					cert: "./certs/cert.pem",
+					key: "./certs/key.pem",
+				},
 			},
 		},
 	},
