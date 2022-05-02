@@ -2,10 +2,9 @@
 	import { locale } from "svelte-i18n";
 	import { fullLang } from "/src/i18n.js";
 	import Select from "svelte-select";
-	import DiscordButton from "./discordButton.svelte";
 	import { goto } from "$app/navigation";
 	const userData = (async () => {
-		const request = await fetch(`https://localhost:8080/api/v1/users/getuserdata`, {
+		const request = await fetch(`https://${HOST}:8080/api/v1/users/getuserdata`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
@@ -13,10 +12,13 @@
 			mode: "cors",
 			credentials: "include",
 		});
-		const data = await request.json();
-		if (data.error) {
-			throw "rip";
+
+		if (/^(4|5)/.test(request.status)) {
+			throw new Error("Error fetching user data");
 		}
+
+		const data = await request.json();
+
 		return data;
 	})();
 </script>
@@ -43,6 +45,8 @@
 					title={fetchedUserData.username}
 				/>
 			</button>
+		{:catch}
+			<div />
 		{/await}
 	</div>
 </div>

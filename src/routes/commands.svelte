@@ -37,7 +37,7 @@
 			<button title={$_("commands.funny_text_hover_server")} use:tooltip>
 				<img
 					class="rounded-3xl"
-					src="https://cdn.discordapp.com/avatars/215982178046181376/7207696baf6774c970bcd37c6a12c5fd.png"
+					src="/cat.png"
 					alt=""
 				/>
 			</button>
@@ -54,7 +54,7 @@
 			</div>
 			<img
 				class="rounded-full"
-				src={`https://cdn.discordapp.com/avatars/215982178046181376/7207696baf6774c970bcd37c6a12c5fd.png`}
+				src= "/cat.png"
 				alt=""
 				title="You"
 				use:tooltip
@@ -91,7 +91,11 @@
 				? '<lg:h-[95%]'
 				: ''} pt-5 ml-5 flex flex-col z-0"
 		>
-			<DiscordMessage commands={helpPages[choosenChannel]} />
+			<div class="mainDiv mb-auto flex flex-col children:mt-6 max-h-90vh overflow-scroll mr-10">
+				{#each Object.entries(helpPages[choosenChannel]) as [command, description]}
+					<DiscordMessage {command} {description} />
+				{/each}
+			</div>
 			<input
 				type="text"
 				bind:value={currentText}
@@ -104,6 +108,17 @@
 </div>
 
 <style>
+	::-webkit-scrollbar {
+		width: 0; /* Remove scrollbar space */
+		background: transparent; /* Optional: just make scrollbar invisible */
+		overflow-x: hidden;
+	}
+	div {
+		scrollbar-width: none; /* Firefox */
+		-ms-overflow-style: none; /* IE 10+ */
+		overflow: -moz-scrollbars-none; /* None */
+	}
+
 	.language {
 		background-image: url("/servers/lang.png");
 		background-position: center;

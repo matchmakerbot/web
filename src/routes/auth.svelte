@@ -3,9 +3,10 @@
 	import { onMount } from "svelte";
 	import { goto } from "$app/navigation";
 	import { _ } from "svelte-i18n";
+	
 	onMount(async () => {
 		const response = await fetch(
-			`https://localhost:8080/api/v1/auth/discord?code=${$page.url.searchParams.get("code")}`,
+			`https://${HOST}:8080/api/v1/auth/discord?code=${$page.url.searchParams.get("code")}`,
 			{
 				method: "GET",
 				headers: {

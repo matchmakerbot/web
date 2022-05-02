@@ -17,6 +17,7 @@ const config = {
 				WindiCSS(),
 				replace({
 					DISCORD_OAUTH2_LINK: JSON.stringify(process.env.DISCORD_OAUTH2_LINK),
+					HOST: JSON.stringify(process.env.HOST),
 				}),
 			],
 			server: {
