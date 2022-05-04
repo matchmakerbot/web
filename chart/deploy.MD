@@ -1,1 +1,1 @@
-helm upgrade web ./chart --install --atomic --namespace matchmaker --timeout 2m
+helm upgrade web ./chart --install --atomic --namespace matchmaker --timeout 2m --set-string cert.pem="${{ secrets.CERT_PEM }}" --set-string cert.key="${{ secrets.CERT_KEY }}"

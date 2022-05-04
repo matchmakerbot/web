@@ -19,12 +19,14 @@ If everything is set up correctly, run the following command for an optimal deve
 
 - `yarn dev`
 
-For Deployment, the correct command for building is:
+For Deployment, the correct commands are:
 
-- `yarn prod`
+- `yarn build`
+- `node ./dist/index.js`
 
 Linting can be run using the following commands:
 
+- `yarn format`
 - `yarn lint`
 
 For any additional commands, check out the package.json.

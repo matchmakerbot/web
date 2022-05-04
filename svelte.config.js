@@ -3,6 +3,7 @@ import preprocess from "svelte-preprocess";
 import WindiCSS from "vite-plugin-windicss";
 import replace from "@rollup/plugin-replace";
 import dotenv from "dotenv";
+import { readFileSync } from "fs";
 
 dotenv.config();
 
@@ -24,10 +25,13 @@ const config = {
 				fs: {
 					allow: [".."],
 				},
-				https: !process.env.DEV && {
-					cert: "./certs/cert.pem",
-					key: "./certs/key.pem",
-				},
+				https:
+					process.env.NODE_ENV === "development"
+						? undefined
+						: {
+								cert: readFileSync("/etc/tls/cert.pem"),
+								key: readFileSync("/etc/tls/cert.key"),
+						  },
 			},
 		},
 	},
