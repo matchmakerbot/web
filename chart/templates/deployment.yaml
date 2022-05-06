@@ -39,14 +39,3 @@ spec:
             periodSeconds: 20
             successThreshold: 1
             timeoutSeconds: 2
-          volumeMounts:
-            - name: "{{ .Release.Name }}-cert"
-              mountPath: /etc/tls
-            - name: temp
-              mountPath: /tmp
-          volumes:
-            - name: "{{ .Release.Name }}-cert"
-              secret:
-                secretName: "{{ .Release.Name }}-cert"
-            - name: temp
-              emptyDir: {}
