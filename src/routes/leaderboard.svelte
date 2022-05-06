@@ -7,7 +7,7 @@
 	const discordOauth2Link = DISCORD_OAUTH2_LINK;
 
 	const userDataAndServerList = (async () => {
-		const cookieValidation = await fetch(`https://${HOST}:8080/api/v1/auth/validatecookie`, {
+		const cookieValidation = await fetch(`https://${HOSTNAME}:8080/api/v1/auth/validatecookie`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
@@ -21,7 +21,7 @@
 		}
 
 		const serverListRequest = await fetch(
-			`https://${HOST}:8080/api/v1/guilds/getguildsuserandbotisin`,
+			`https://${HOSTNAME}:8080/api/v1/guilds/getguildsuserandbotisin`,
 			{
 				method: "GET",
 				headers: {
@@ -36,7 +36,7 @@
 			return goto(`/error?code=${serverListRequest.status}&data=${serverListRequest.statusText}`);
 		}
 
-		const userDataRequest = await fetch(`https://${HOST}:8080/api/v1/users/getuserdata`, {
+		const userDataRequest = await fetch(`https://${HOSTNAME}:8080/api/v1/users/getuserdata`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
