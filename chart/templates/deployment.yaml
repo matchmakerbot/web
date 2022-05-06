@@ -17,14 +17,14 @@ spec:
         - name: "{{ .Release.Name }}"
           image: "ghcr.io/matchmakerbot/{{ .Release.Name }}:latest"
           ports:
-            - containerPort: 3000
+            - containerPort: 80
           envFrom:
             - configMapRef:
                 name: "{{ .Release.Name }}-config"
           readinessProbe:
             httpGet:
               path: /healthz
-              port: 3000
+              port: 80
             failureThreshold: 1
             initialDelaySeconds: 10
             periodSeconds: 30
@@ -33,7 +33,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /healthz
-              port: 3000
+              port: 80
             failureThreshold: 3
             initialDelaySeconds: 10
             periodSeconds: 20

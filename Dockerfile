@@ -8,7 +8,6 @@ RUN pnpm run build
 FROM node:16-alpine
 WORKDIR /app
 COPY --from=appbuild ./app/dist ./
-COPY package.json ./
-EXPOSE 3000
+EXPOSE 80
 
 CMD ["node", "."]
