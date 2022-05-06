@@ -12,10 +12,12 @@ The Matchmaker Bot Website, where users can check the current leaderboard, and a
 ## Enviroment_Variables
 
 The following environment variabled are required to run the container:
+
 - **DISCORD_OAUTH2_LINK**: Discord OAuth2 Link
 - **HOSTNAME**: Host Name.
 
 Not Mandatory:
+
 - **HOST**: Address to run the server on.
 - **PORT**: Port to run the server on.
 
