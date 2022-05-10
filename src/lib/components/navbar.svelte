@@ -4,7 +4,7 @@
 	import Select from "svelte-select";
 	import { goto } from "$app/navigation";
 	const userData = (async () => {
-		const request = await fetch(`https://${HOST_NAME}:8080/api/v1/users/getuserdata`, {
+		const request = await fetch(`https://${HOST_NAME}/api/v1/users/getuserdata`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",

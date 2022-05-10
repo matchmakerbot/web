@@ -6,7 +6,7 @@
 
 	onMount(async () => {
 		const response = await fetch(
-			`https://${HOST_NAME}:8080/api/v1/auth/discord?code=${$page.url.searchParams.get("code")}`,
+			`https://${HOST_NAME}/api/v1/auth/discord?code=${$page.url.searchParams.get("code")}`,
 			{
 				method: "GET",
 				headers: {

@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
         - name: "{{ .Release.Name }}"
+          ImagePullPolicy: Always
           image: "ghcr.io/matchmakerbot/{{ .Release.Name }}:latest"
           ports:
             - containerPort: 80
