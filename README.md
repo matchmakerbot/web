@@ -14,7 +14,7 @@ The Matchmaker Bot Website, where users can check the current leaderboard, and a
 The following environment variabled are required to run the container:
 
 - **DISCORD_OAUTH2_LINK**: Discord OAuth2 Link
-- **HOSTNAME**: Host Name.
+- **HOST_NAME**: Host Name.
 
 Not Mandatory:
 

@@ -1,7 +1,7 @@
 <script>
 	import { tooltip } from "$lib/tooltip/tooltip.js";
 	import { dictionary } from "svelte-i18n";
-	import { fullLang } from "/src/i18n.js";
+	import { fullLang } from "/src/i18n.svelte";
 	import { locale } from "svelte-i18n";
 	import { _ } from "svelte-i18n";
 	import Select from "svelte-select";

@@ -1,6 +1,6 @@
 <script>
 	import { locale } from "svelte-i18n";
-	import { fullLang } from "/src/i18n.js";
+	import { fullLang } from "/src/i18n.svelte";
 	import Select from "svelte-select";
 	import { goto } from "$app/navigation";
 	const userData = (async () => {

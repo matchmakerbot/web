@@ -5,7 +5,7 @@
 
 	import ChannelList from "./channelList.svelte";
 	import { tooltip } from "../tooltip/tooltip.js";
-	import { fullLang } from "/src/i18n.js";
+	import { fullLang } from "/src/i18n.svelte";
 	import { isHidden } from "/src/stores/leaderboard";
 
 	export let servers = [];
