@@ -21,6 +21,8 @@
 
 		return data;
 	})();
+
+	const langObj = fullLang.find((e) => e.value === $locale);
 </script>
 
 <div class="p-4 flex justify-between items-center relative z-10">
@@ -29,9 +31,7 @@
 		<div class="language mr-5 w-30">
 			<Select
 				on:select={(event) => ($locale = event.detail.value)}
-				placeholder={$locale === "en-US"
-					? "English"
-					: fullLang.find((e) => e.value === $locale).label}
+				placeholder={langObj == null ? "English" : langObj.label}
 				items={fullLang}
 				isSearchable={false}
 			/>

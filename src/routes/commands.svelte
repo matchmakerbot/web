@@ -7,13 +7,17 @@
 	import Select from "svelte-select";
 
 	import DiscordMessage from "$lib/components/discordMessage.svelte";
+
+	const langObj = fullLang.find((e) => e.value === $locale);
+
 	let channels = ["general help", "solos", "teams"];
 	let choosenChannel = "general help";
 	let currentText = "";
 	let i = 0;
 	let isHidden = true;
-	let helpPages = $dictionary[$locale === "en-US" ? "en" : $locale].commands.commands_info;
-	$: locale, (helpPages = $dictionary[$locale === "en-US" ? "en" : $locale].commands.commands_info);
+	let helpPages = $dictionary[langObj == null ? "en" : langObj.value].commands.commands_info;
+	$: locale,
+		(helpPages = $dictionary[langObj == null ? "en" : langObj.value].commands.commands_info);
 
 	const addText = (keyEvent) => {
 		if (keyEvent.key === "Enter" && keyEvent.target.value.length > 0) {
