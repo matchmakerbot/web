@@ -3,7 +3,7 @@
 
 	export const fetchLeaderboard = async (channel, skip) => {
 		const response = await fetch(
-			`https://${HOSTNAME}:8080/api/v1/leaderboards/${
+			`https://${HOST_NAME}:8080/api/v1/leaderboards/${
 				channel.queueMode === "solos" ? "solos" : "teams"
 			}/channel/${channel.channelId}?skip=${skip}`,
 			{

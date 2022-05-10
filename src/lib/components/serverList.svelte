@@ -15,7 +15,7 @@
 	let choosenChannels = [];
 
 	const fetchChannels = async (id) => {
-		const channelsReq = await fetch(`https://${HOSTNAME}:8080/api/v1/channels/guild/${id}`, {
+		const channelsReq = await fetch(`https://${HOST_NAME}:8080/api/v1/channels/guild/${id}`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",

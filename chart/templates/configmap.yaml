@@ -4,7 +4,5 @@ metadata:
   name: "{{ .Release.Name }}-config"
   namespace: "{{ .Release.Namespace }}"
 data:
-  DISCORD_OAUTH2_LINK: "https://discord.com/api/oauth2/authorize?client_id=571839826744180736&redirect_uri=https%3A%2F%2Fmatchmakerbot.net%2Fauth&response_type=code&scope=guilds.members.read%20guilds%20identify"
-  HOSTNAME: matchmakerbot.net
   PORT: "80"
   HOST: "0.0.0.0"

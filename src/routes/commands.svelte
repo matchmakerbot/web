@@ -48,7 +48,7 @@
 					isSearchable={false}
 				/>
 			</div>
-			<img class="rounded-full" src="/cat.png" alt="" use:tooltip />
+			<img class="rounded-full" src="/cat.png" title="You, whoever that is" alt="" use:tooltip />
 		</div>
 	</div>
 	<div class="bg-deep-700 min-w-250px <lg:{isHidden && 'hidden'}">
