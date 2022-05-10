@@ -16,7 +16,7 @@ const config = {
 			plugins: [
 				WindiCSS(),
 				replace({
-					DISCORD_OAUTH2_LINK: `"https://discord.com/api/oauth2/authorize?client_id=571839826744180736&redirect_uri=https%3A%2F%2Flocalhost%3A3000%2Fauth&response_type=code&scope=identify%20guilds%20guilds.members.read"`,
+					DISCORD_OAUTH2_LINK: `"https://discord.com/api/oauth2/authorize?client_id=571839826744180736&redirect_uri=https%3A%2F%2Fmatchmakerbot.net%2Fauth&response_type=code&scope=identify%20guilds%20guilds.members.read"`,
 					HOST_NAME: `"matchmakerbot.net"`,
 				}),
 			],
